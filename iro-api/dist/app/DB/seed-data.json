@@ -1,0 +1,1435 @@
+{
+    "programs": [
+        {
+            "slug": "quran",
+            "icon": "📖",
+            "order": 0,
+            "status": "ongoing",
+            "published": true,
+            "title": {
+                "bn": "কুরআন ও ফরযে 'আইন শিক্ষা",
+                "en": "Quran and Fard 'Ayn Education"
+            },
+            "short": {
+                "bn": "শিশু, যুবক ও বয়স্কদের জন্য কুরআন তিলাওয়াত, নামাজ, দু'আ ও অযুসহ মৌলিক দ্বীনি শিক্ষা।",
+                "en": "Quran recitation, prayer, supplications and ablution: essential Islamic knowledge for children, youth and adults."
+            },
+            "body": {
+                "bn": "প্রতি রমাদানে বিভিন্ন কেন্দ্রে এই কার্যক্রম চলে। বিগত বছরগুলোতে ৩টি কেন্দ্রে প্রায় ১০০ জন শিক্ষার্থী এর আওতায় এসেছেন। পাশাপাশি যুবক ও বয়স্কদের জন্য সারা বছরের কোর্স চালুর পরিকল্পনা আছে, যেখানে নামাজের নিয়ম, সূরা মুখস্থ, দু'আ ও পবিত্রতা অর্জন শেখানো হবে।",
+                "en": "Held every Ramadan at several centres. In past years about 100 learners were reached at 3 centres. A year-round course for youth and adults is planned, covering the rules of prayer, memorising surahs, supplications and purification."
+            },
+            "tagline": {
+                "bn": "নিজের সত্যিকারের পরিচয়ে ফিরে আসার প্রথম পাঠ",
+                "en": "The first lesson in returning to who we truly are"
+            },
+            "points": [
+                {
+                    "bn": "প্রতি রমাদানে বিভিন্ন কেন্দ্রে কুরআন ও ফরযে 'আইন শিক্ষার আয়োজন",
+                    "en": "Quran and Fard 'Ayn classes at several centres every Ramadan"
+                },
+                {
+                    "bn": "যুবক ও বয়স্কদের জন্য সারা বছরের কোর্স, যত্ন সহকারে কুরআন শেখানো (পরিকল্পনাধীন)",
+                    "en": "A year-round course for youth and adults, teaching the Quran with care (planned)"
+                },
+                {
+                    "bn": "নামাজের যাবতীয় নিয়ম-কানুন, সূরা মুখস্থ ও দু'আ শিক্ষা",
+                    "en": "All the rules of prayer, memorising surahs and supplications"
+                },
+                {
+                    "bn": "পবিত্রতা অর্জন ও অযুর সঠিক পদ্ধতি",
+                    "en": "Purification and the correct way of ablution"
+                },
+                {
+                    "bn": "ততটুকু ইলম, যা দুনিয়ার কল্যাণ ও আখিরাতের নাজাতের জন্য জরুরি",
+                    "en": "Exactly the knowledge needed for success in this life and salvation in the next"
+                }
+            ],
+            "figures": [
+                {
+                    "value": {
+                        "bn": "৩",
+                        "en": "3"
+                    },
+                    "label": {
+                        "bn": "কেন্দ্র",
+                        "en": "Centres"
+                    }
+                },
+                {
+                    "value": {
+                        "bn": "১০০+",
+                        "en": "100+"
+                    },
+                    "label": {
+                        "bn": "শিক্ষার্থী",
+                        "en": "Students"
+                    }
+                }
+            ],
+            "ayah": {
+                "arabic": "يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ حَقَّ تُقَاتِهِ وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ",
+                "text": {
+                    "bn": "হে বিশ্বাস স্থাপনকারীগণ! তোমরা আল্লাহকে যথাযথভাবে ভয় কর এবং মুসলিম না হয়ে মৃত্যুবরণ করো না।",
+                    "en": "O you who believe! Fear Allah as He should be feared, and do not die except as Muslims."
+                },
+                "source": {
+                    "bn": "সূরা আলে ইমরান, ৩:১০২",
+                    "en": "Surah Aal-E-Imran, 3:102"
+                }
+            }
+        },
+        {
+            "slug": "dawah",
+            "icon": "🕌",
+            "order": 1,
+            "status": "planned",
+            "published": true,
+            "title": {
+                "bn": "দাওয়াহ ও প্রশিক্ষণ",
+                "en": "Dawah and Training"
+            },
+            "short": {
+                "bn": "হিকমাহ ও উত্তম উপদেশের মাধ্যমে কুরআন-সুন্নাহর দাওয়াহ এবং দক্ষ দাঈ তৈরি।",
+                "en": "Evidence-based dawah through wisdom and good counsel, and training of skilled callers (du'at)."
+            },
+            "body": {
+                "bn": "আমরা এমন একটি দাওয়াহ টিম গড়তে চাই, যারা রাসূল (সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম)-এর পদ্ধতিতে দলীলভিত্তিক দাওয়াহ দেবে এবং ইসলামের বিরুদ্ধে উত্থাপিত অভিযোগের যথাযথ জবাব দেবে। এই টিমের ইসলামী জ্ঞানের পাশাপাশি বিজ্ঞান ও অন্যান্য বিষয়ে যুক্তির দক্ষতাও থাকবে।",
+                "en": "We aim to build a dawah team that follows the method of the Prophet (peace be upon him), invites with evidence from the Quran and authentic Hadith, and answers allegations against Islam properly, equipped with Islamic knowledge as well as sound reasoning in science and other fields."
+            },
+            "tagline": {
+                "bn": "হিকমত, উত্তম উপদেশ ও সুন্দরতম বিতর্কের পথে",
+                "en": "On the path of wisdom, good counsel and the best of debate"
+            },
+            "points": [
+                {
+                    "bn": "রাসূল (সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম)-এর দেখানো পদ্ধতিতে কুরআন ও সহীহ হাদীসের দাওয়াত",
+                    "en": "Dawah from the Quran and authentic Hadith, in the way the Prophet (peace be upon him) showed"
+                },
+                {
+                    "bn": "বিজ্ঞান, কুরআনের আয়াত বা হাদীস নিয়ে ইসলামের বিরুদ্ধে ওঠা অভিযোগের যথাযথ জবাব",
+                    "en": "Proper answers to allegations against Islam, whether about science, a verse or a Hadith"
+                },
+                {
+                    "bn": "অমুসলিমদের কাছে যত্ন সহকারে ইসলামের দাওয়াত",
+                    "en": "Inviting non-Muslims to Islam with great care"
+                },
+                {
+                    "bn": "ইসলামী জ্ঞানের সাথে বিজ্ঞান ও অন্যান্য বিষয়ে যুক্তির দক্ষতা",
+                    "en": "Islamic knowledge together with strong reasoning in science and other fields"
+                },
+                {
+                    "bn": "দুর্বল হাদীস ও কিচ্ছা-কাহিনীর বদলে দলীলভিত্তিক আলোচনা",
+                    "en": "Evidence-based talks in place of weak Hadith and folk tales"
+                }
+            ],
+            "figures": [],
+            "ayah": {
+                "arabic": "ادْعُ إِلَىٰ سَبِيلِ رَبِّكَ بِالْحِكْمَةِ وَالْمَوْعِظَةِ الْحَسَنَةِ وَجَادِلْهُم بِالَّتِي هِيَ أَحْسَنُ",
+                "text": {
+                    "bn": "তুমি তোমার রবের পথে হিকমত ও সুন্দর উপদেশের মাধ্যমে আহ্বান কর এবং সুন্দরতম পন্থায় তাদের সাথে বিতর্ক কর।",
+                    "en": "Invite to the way of your Lord with wisdom and good instruction, and debate with them in the best way."
+                },
+                "source": {
+                    "bn": "সূরা আন-নাহল, ১৬:১২৫",
+                    "en": "Surah An-Nahl, 16:125"
+                }
+            }
+        },
+        {
+            "slug": "library",
+            "icon": "📚",
+            "order": 2,
+            "status": "ongoing",
+            "published": true,
+            "title": {
+                "bn": "ইসলামিক ওপেন লাইব্রেরি",
+                "en": "Islamic Open Library"
+            },
+            "short": {
+                "bn": "সবার জন্য উন্মুক্ত গ্রন্থাগার। আরবি, উর্দু, ফারসি, ইংরেজি ও বাংলা বই।",
+                "en": "A library open to everyone, with books in Arabic, Urdu, Persian, English and Bengali."
+            },
+            "body": {
+                "bn": "লাইব্রেরিতে এখন প্রায় ৩০০টি বই আছে: কুরআনের বিভিন্ন অনুবাদ, হাদীস গ্রন্থ, ফিকহ, ফতোয়া, আত্মউন্নয়নমূলক বই, গল্প ও উপন্যাস। নিয়মিত পাঠক প্রায় ১০০ জন। লক্ষ্য একটি বিশাল সংগ্রহ গড়ে তোলা, যা সবার জন্য সদাকায়ে জারিয়াহ হবে।",
+                "en": "About 300 books so far: Quran translations, Hadith collections, fiqh, fatwa, self-development, stories and novels, with around 100 regular readers. The aim is a vast collection that becomes a continuing charity (sadaqah jariyah) for everyone involved."
+            },
+            "tagline": {
+                "bn": "জ্ঞানের এক মহাসমুদ্রের সূচনা",
+                "en": "The beginning of an ocean of knowledge"
+            },
+            "points": [
+                {
+                    "bn": "সবার জন্য উন্মুক্ত পাঠাগার",
+                    "en": "A reading library open to everyone"
+                },
+                {
+                    "bn": "আরবি, উর্দু, ফারসি, ইংরেজি ও বাংলা অনুবাদসহ মূল গ্রন্থ",
+                    "en": "Original books and translations in Arabic, Urdu, Persian, English and Bengali"
+                },
+                {
+                    "bn": "কুরআনের বিভিন্ন অনুবাদ, হাদীস গ্রন্থ, ফিকহ, ফতোয়া, আত্মউন্নয়ন, গল্প ও উপন্যাস",
+                    "en": "Quran translations, Hadith collections, fiqh, fatwa, self-development, stories and novels"
+                },
+                {
+                    "bn": "ভবিষ্যতে দুর্লভ পাণ্ডুলিপিসহ বিশাল সংগ্রহ গড়ার পরিকল্পনা",
+                    "en": "A plan to build a vast collection, including rare manuscripts"
+                },
+                {
+                    "bn": "অর্গানাইজেশনের সাথে যুক্ত সবার জন্য সদকায়ে জারিয়াহ",
+                    "en": "An ongoing charity (sadaqah jariyah) for everyone connected with the organization"
+                }
+            ],
+            "figures": [
+                {
+                    "value": {
+                        "bn": "৩০০+",
+                        "en": "300+"
+                    },
+                    "label": {
+                        "bn": "বই",
+                        "en": "Books"
+                    }
+                },
+                {
+                    "value": {
+                        "bn": "১০০",
+                        "en": "100"
+                    },
+                    "label": {
+                        "bn": "নিয়মিত পাঠক",
+                        "en": "Regular readers"
+                    }
+                }
+            ],
+            "ayah": {
+                "arabic": "إِذَا مَاتَ الإِنْسَانُ انْقَطَعَ عَنْهُ عَمَلُهُ إِلاَّ مِنْ ثَلاَثَةٍ: إِلاَّ مِنْ صَدَقَةٍ جَارِيَةٍ، أَوْ عِلْمٍ يُنْتَفَعُ بِهِ، أَوْ وَلَدٍ صَالِحٍ يَدْعُو لَهُ",
+                "text": {
+                    "bn": "মানুষ মারা গেলে তিনটি আমল ছাড়া তার সকল আমল বন্ধ হয়ে যায়: সাদাকায়ে জারিয়া, উপকারী ইলম, এবং নেককার সন্তান যে তার জন্য দু'আ করে।",
+                    "en": "When a person dies, all their deeds end except three: ongoing charity, beneficial knowledge, or a righteous child who prays for them."
+                },
+                "source": {
+                    "bn": "সহীহ মুসলিম",
+                    "en": "Sahih Muslim"
+                }
+            }
+        },
+        {
+            "slug": "publication",
+            "icon": "📝",
+            "order": 3,
+            "status": "planned",
+            "published": true,
+            "title": {
+                "bn": "গবেষণা ও প্রকাশনা",
+                "en": "Research and Publications"
+            },
+            "short": {
+                "bn": "মাসিক ও ত্রৈমাসিক ইসলামিক ম্যাগাজিন, বই, প্রবন্ধ ও অনুবাদ।",
+                "en": "Monthly and quarterly Islamic magazines, books, articles and translations."
+            },
+            "body": {
+                "bn": "ম্যাগাজিনে সমকালীন বিষয়ে ইসলামী দৃষ্টিভঙ্গি, সমাজের সমস্যার সমাধান এবং প্রশ্নোত্তর থাকবে। এটি অনলাইন ও অফলাইন দুইভাবেই প্রকাশ হবে।",
+                "en": "The magazine will discuss current issues from an Islamic perspective, offer solutions to social problems and answer readers' questions, online and offline."
+            },
+            "tagline": {
+                "bn": "পড়ার অভ্যাস থেকে সমাজ গড়ার পথে",
+                "en": "From the habit of reading to building a society"
+            },
+            "points": [
+                {
+                    "bn": "প্রতি মাসে একটি এবং প্রতি তিন মাসে একটি ত্রৈমাসিক ইসলামিক ম্যাগাজিন",
+                    "en": "A monthly magazine and a quarterly Islamic magazine"
+                },
+                {
+                    "bn": "সাম্প্রতিক বিষয়ে ইসলামী দৃষ্টিভঙ্গিতে আলোচনা",
+                    "en": "Discussion of current issues from an Islamic perspective"
+                },
+                {
+                    "bn": "সমাজের নানা সমস্যার সমাধান ও জীবনঘনিষ্ঠ প্রশ্নোত্তর",
+                    "en": "Solutions to social problems and practical questions and answers"
+                },
+                {
+                    "bn": "দেশ-বিদেশের খবর",
+                    "en": "News from home and abroad"
+                },
+                {
+                    "bn": "অনলাইন ও অফলাইন প্রকাশ এবং ম্যাগাজিন অ্যাপ",
+                    "en": "Online and offline editions, plus a magazine app"
+                }
+            ],
+            "figures": [],
+            "ayah": {
+                "arabic": "اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ",
+                "text": {
+                    "bn": "পড়ো তোমার রবের নামে, যিনি সৃষ্টি করেছেন।",
+                    "en": "Read in the name of your Lord who created."
+                },
+                "source": {
+                    "bn": "সূরা আল-আলাক, ৯৬:১",
+                    "en": "Surah Al-Alaq, 96:1"
+                }
+            }
+        },
+        {
+            "slug": "welfare",
+            "icon": "🌱",
+            "order": 4,
+            "status": "ongoing",
+            "published": true,
+            "title": {
+                "bn": "সমাজসেবা ও মানবকল্যাণ",
+                "en": "Social Service and Welfare"
+            },
+            "short": {
+                "bn": "শীতবস্ত্র বিতরণ, বৃক্ষরোপণ, ত্রাণ এবং অভাবী, ইয়াতীম ও বিধবাদের পাশে থাকা।",
+                "en": "Winter clothing, tree plantation, relief, and standing with the poor, orphans and widows."
+            },
+            "body": {
+                "bn": "শীতকালে বাছাই করা তালিকা ধরে বাড়ি বাড়ি গিয়ে ৩৫০টিরও বেশি পরিবারকে কম্বল দেওয়া হয়েছে (কাহালগাঁও, দোলমা, রঙের দ্বারা, উথুরা, হাছেনের মোড়)। বর্ষায় বৃক্ষরোপণ: এ বছর ১০টি শিক্ষা প্রতিষ্ঠানে ৩০টির বেশি বনজ, ফলজ ও ঔষধি গাছ লাগানো হয়েছে। ভবিষ্যতে রাস্তার ধার, মসজিদ, বাজার ও সরকারি অফিসেও গাছ লাগানো হবে, ইন শা আল্লাহ।",
+                "en": "Blankets were delivered door to door, from a pre-screened list, to more than 350 families (Kahalgaon, Dolma, Ronger Dhara, Uthura, Hasener Mor). Each monsoon we plant trees: this year over 30 timber, fruit and medicinal trees in 10 educational institutions. Roadsides, mosques, markets and government offices will follow, God willing."
+            },
+            "tagline": {
+                "bn": "যেখানে অন্যরা পৌঁছাতে পারেনি, সেখানে",
+                "en": "Reaching where others could not"
+            },
+            "points": [
+                {
+                    "bn": "বাছাই করা তালিকা ধরে বাড়ি বাড়ি গিয়ে সরাসরি শীতবস্ত্র বিতরণ",
+                    "en": "Door-to-door winter clothing delivery from a pre-screened list"
+                },
+                {
+                    "bn": "কাহালগাঁও, দোলমা, রঙের দ্বারা, উথুরা ও হাছেনের মোড়ের অসহায় মানুষের পাশে",
+                    "en": "Standing with the needy in Kahalgaon, Dolma, Ronger Dhara, Uthura and Hasener Mor"
+                },
+                {
+                    "bn": "প্রতি বর্ষায় বনজ, ফলজ ও ঔষধি গাছ লাগানো, যা সদকায়ে জারিয়াহ",
+                    "en": "Planting timber, fruit and medicinal trees every monsoon, as ongoing charity"
+                },
+                {
+                    "bn": "ঈদে অভাবীদের মাঝে খাদ্য ও কুরবানির মাংস বিতরণ",
+                    "en": "Food and Qurbani meat for the needy at Eid"
+                },
+                {
+                    "bn": "অভাবী, ইয়াতীম, বিধবা এবং ঝড়-বন্যার ক্ষতিগ্রস্তদের সহায়তা",
+                    "en": "Support for the poor, orphans, widows and victims of storms and floods"
+                }
+            ],
+            "figures": [
+                {
+                    "value": {
+                        "bn": "৩৫০+",
+                        "en": "350+"
+                    },
+                    "label": {
+                        "bn": "পরিবারে শীতবস্ত্র",
+                        "en": "Families given winter clothing"
+                    }
+                },
+                {
+                    "value": {
+                        "bn": "১০",
+                        "en": "10"
+                    },
+                    "label": {
+                        "bn": "প্রতিষ্ঠানে বৃক্ষরোপণ",
+                        "en": "Institutions planted"
+                    }
+                },
+                {
+                    "value": {
+                        "bn": "৩০+",
+                        "en": "30+"
+                    },
+                    "label": {
+                        "bn": "গাছ",
+                        "en": "Trees"
+                    }
+                }
+            ],
+            "ayah": {
+                "arabic": "وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ",
+                "text": {
+                    "bn": "তোমরা সৎকর্ম ও তাকওয়ার কাজে একে অপরকে সহযোগিতা কর।",
+                    "en": "Help one another in righteousness and piety."
+                },
+                "source": {
+                    "bn": "সূরা আল-মায়িদাহ, ৫:২",
+                    "en": "Surah Al-Ma'idah, 5:2"
+                }
+            }
+        },
+        {
+            "slug": "contest",
+            "icon": "🏆",
+            "order": 5,
+            "status": "ongoing",
+            "published": true,
+            "title": {
+                "bn": "জ্ঞান প্রতিযোগিতা ও সভা",
+                "en": "Knowledge Contests and Gatherings"
+            },
+            "short": {
+                "bn": "শিক্ষার্থীদের ইসলামিক জ্ঞান প্রতিযোগিতা, সেমিনার, কর্মশালা ও পাঠচক্র।",
+                "en": "Islamic knowledge contests, seminars, workshops and study circles for students."
+            },
+            "body": {
+                "bn": "ষষ্ঠ থেকে দশম শ্রেণি পর্যন্ত প্রতি শ্রেণিতে তিনটি করে পুরস্কার দেওয়া হয়, বাকিদের জন্য থাকে সৌজন্য পুরস্কার। আমাদের সভাগুলোতে শিরক-বিদআতের প্রচার থাকবে না, এবং মাইকের শব্দদূষণও থাকবে না, কারণ তাতে শিশু, বৃদ্ধ, রোগী ও পড়ুয়া শিক্ষার্থীদের কষ্ট হয়।",
+                "en": "From class six to ten, three prizes are given per class, with consolation prizes for the rest. Our gatherings will carry no shirk or bid'ah and no loudspeaker noise, which troubles children, the elderly, the sick and students at their studies."
+            },
+            "tagline": {
+                "bn": "পড়ার অভ্যাস ও প্রতিযোগিতার মনোভাব গড়ার আয়োজন",
+                "en": "Building the habit of reading and a spirit of healthy competition"
+            },
+            "points": [
+                {
+                    "bn": "ষষ্ঠ থেকে দশম শ্রেণি পর্যন্ত প্রতি শ্রেণিতে তিনটি করে পুরস্কার",
+                    "en": "Three prizes per class from class six to ten"
+                },
+                {
+                    "bn": "বাকি অংশগ্রহণকারীদের জন্য সৌজন্য পুরস্কার",
+                    "en": "Consolation prizes for all other participants"
+                },
+                {
+                    "bn": "দ্বীনি জ্ঞানের পাশাপাশি সাম্প্রতিক বিষয় ও আউট নলেজ",
+                    "en": "Religious knowledge alongside current affairs and general knowledge"
+                },
+                {
+                    "bn": "শিরক-বিদআতমুক্ত, শব্দদূষণহীন ইসলামিক সভা ও সেমিনার",
+                    "en": "Islamic gatherings and seminars free of shirk, bid'ah and loudspeaker noise"
+                },
+                {
+                    "bn": "ভবিষ্যতে আরও প্রতিষ্ঠান যুক্ত করে বড় পরিসরে আয়োজন",
+                    "en": "Plans to grow with more institutions in future"
+                }
+            ],
+            "figures": [
+                {
+                    "value": {
+                        "bn": "৩০০+",
+                        "en": "300+"
+                    },
+                    "label": {
+                        "bn": "শিক্ষার্থী",
+                        "en": "Students"
+                    }
+                },
+                {
+                    "value": {
+                        "bn": "২",
+                        "en": "2"
+                    },
+                    "label": {
+                        "bn": "প্রতিষ্ঠান",
+                        "en": "Institutions"
+                    }
+                },
+                {
+                    "value": {
+                        "bn": "৩",
+                        "en": "3"
+                    },
+                    "label": {
+                        "bn": "পুরস্কার প্রতি শ্রেণিতে",
+                        "en": "Prizes per class"
+                    }
+                }
+            ],
+            "ayah": {
+                "arabic": "يَرْفَعِ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَالَّذِينَ أُوتُوا الْعِلْمَ دَرَجَاتٍ",
+                "text": {
+                    "bn": "আল্লাহ তোমাদের মধ্যে যারা ঈমান এনেছে এবং যাদের জ্ঞান দেওয়া হয়েছে, তাদের মর্যাদা উঁচু করবেন।",
+                    "en": "Allah will raise those who believe among you, and those given knowledge, in degrees."
+                },
+                "source": {
+                    "bn": "সূরা আল-মুজাদালা, ৫৮:১১",
+                    "en": "Surah Al-Mujadila, 58:11"
+                }
+            }
+        }
+    ],
+    "items": [
+        {
+            "group": "stat",
+            "order": 0,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "৩০০+",
+                "en": "300+"
+            },
+            "title": {
+                "bn": "ইসলামিক গ্রন্থ",
+                "en": "Islamic books"
+            },
+            "text": {
+                "bn": "ওপেন লাইব্রেরিতে, প্রায় ১০০ জন নিয়মিত পাঠক",
+                "en": "In the Open Library, with about 100 regular readers"
+            }
+        },
+        {
+            "group": "stat",
+            "order": 1,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "১০০+",
+                "en": "100+"
+            },
+            "title": {
+                "bn": "শিক্ষার্থী",
+                "en": "Students"
+            },
+            "text": {
+                "bn": "৩টি কেন্দ্রে কুরআন ও ফরযে 'আইন শিক্ষা",
+                "en": "Quran and essential Islamic knowledge at 3 centres"
+            }
+        },
+        {
+            "group": "stat",
+            "order": 2,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "৩৫০+",
+                "en": "350+"
+            },
+            "title": {
+                "bn": "পরিবার",
+                "en": "Families"
+            },
+            "text": {
+                "bn": "কম্বল ও শীতবস্ত্র পেয়েছে",
+                "en": "Received blankets and winter clothing"
+            }
+        },
+        {
+            "group": "stat",
+            "order": 3,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "৩০০+",
+                "en": "300+"
+            },
+            "title": {
+                "bn": "প্রতিযোগী",
+                "en": "Participants"
+            },
+            "text": {
+                "bn": "দুটি প্রতিষ্ঠানে ইসলামিক জ্ঞান প্রতিযোগিতা",
+                "en": "Islamic knowledge contests in two institutions"
+            }
+        },
+        {
+            "group": "principle",
+            "order": 0,
+            "published": true,
+            "icon": "📖",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "কুরআন ও সুন্নাহর সর্বোচ্চ কর্তৃত্ব",
+                "en": "Supreme authority of Quran and Sunnah"
+            },
+            "text": {
+                "bn": "জীবনের প্রতিটি বিষয়ে পবিত্র কুরআন ও সহীহ সুন্নাহ চূড়ান্ত মানদণ্ড।",
+                "en": "The Quran and authentic Sunnah are the final standard in every matter of life."
+            }
+        },
+        {
+            "group": "principle",
+            "order": 1,
+            "published": true,
+            "icon": "🕌",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "সালাফে সালেহীনের মানহাজ",
+                "en": "The way of the Salaf as-Salih"
+            },
+            "text": {
+                "bn": "সাহাবা, তাবেঈন ও তাবে-তাবেঈনের আকীদা, বুঝ ও আমলকে পথনির্দেশক হিসেবে গ্রহণ।",
+                "en": "The creed, understanding and practice of the Companions and the two generations after them guide us."
+            }
+        },
+        {
+            "group": "principle",
+            "order": 2,
+            "published": true,
+            "icon": "🔍",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "দলীলভিত্তিক জ্ঞান ও গবেষণা",
+                "en": "Evidence-based knowledge and research"
+            },
+            "text": {
+                "bn": "অন্ধ তাকলীদ ও ব্যক্তিকেন্দ্রিকতার বদলে নির্ভরযোগ্য দলীলের আলোকে সত্য অনুসন্ধান।",
+                "en": "Seeking truth through reliable evidence, not blind imitation or personality cults."
+            }
+        },
+        {
+            "group": "principle",
+            "order": 3,
+            "published": true,
+            "icon": "⚖️",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "সত্য ও ন্যায়ের প্রতি অঙ্গীকার",
+                "en": "Commitment to truth and justice"
+            },
+            "text": {
+                "bn": "ব্যক্তি, দল বা মতের ঊর্ধ্বে উঠে সত্যকে অনুসরণ।",
+                "en": "Following the truth above any person, group or opinion."
+            }
+        },
+        {
+            "group": "principle",
+            "order": 4,
+            "published": true,
+            "icon": "🤝",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "মুসলিম উম্মাহর ঐক্য",
+                "en": "Unity of the Muslim Ummah"
+            },
+            "text": {
+                "bn": "কুরআন ও সুন্নাহর ভিত্তিতে ভ্রাতৃত্ব ও পারস্পরিক সহযোগিতা সুদৃঢ় করা।",
+                "en": "Strengthening brotherhood and cooperation on the basis of Quran and Sunnah."
+            }
+        },
+        {
+            "group": "principle",
+            "order": 5,
+            "published": true,
+            "icon": "🌱",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "আমানতদারিতা ও জবাবদিহিতা",
+                "en": "Trust and accountability"
+            },
+            "text": {
+                "bn": "সকল দায়িত্ব ও সম্পদকে আল্লাহর আমানত মনে করে স্বচ্ছতার সাথে পরিচালনা।",
+                "en": "Treating every responsibility and resource as a trust from Allah, managed with transparency."
+            }
+        },
+        {
+            "group": "goal",
+            "order": 0,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "পবিত্র কুরআন ও সহীহ হাদীসের গবেষণা, জ্ঞানার্জন ও তদনুযায়ী আমল।",
+                "en": "Research, learning and practice of the Quran and authentic Hadith."
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "goal",
+            "order": 1,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "সালাফে সালেহীনের বুঝ অনুসারে কুরআন ও সহীহ হাদীসের সঠিক ব্যাখ্যা প্রদান।",
+                "en": "Giving the correct explanation of the Quran and authentic Hadith as the Salaf understood them."
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "goal",
+            "order": 2,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "ইসলামের নির্ভেজাল রূপ তুলে ধরা, অভিযোগের জবাব দেওয়া এবং মুসলিমদের মধ্যে ঐক্য গড়ার চেষ্টা।",
+                "en": "Presenting the pure form of Islam, answering allegations against it, and working for unity among Muslims."
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "department",
+            "order": 0,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "সাংগঠনিক",
+                "en": "Organisational"
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "department",
+            "order": 1,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "দা'ওয়াহ ও মিডিয়া",
+                "en": "Dawah & Media"
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "department",
+            "order": 2,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "ফাতাওয়া ও গবেষণা",
+                "en": "Fatwa & Research"
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "department",
+            "order": 3,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "তা'লীম ও প্রশিক্ষণ",
+                "en": "Education & Training"
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "department",
+            "order": 4,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "অর্থ ও পরিকল্পনা",
+                "en": "Finance & Planning"
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "department",
+            "order": 5,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "সমাজ সেবা ও জনকল্যাণ",
+                "en": "Social Service & Welfare"
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "department",
+            "order": 6,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "শিক্ষা ও মাদরাসা কার্যক্রম",
+                "en": "Education & Madrasa Programs"
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "department",
+            "order": 7,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "প্রকাশনা",
+                "en": "Publications"
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "department",
+            "order": 8,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "আইন ও সম্পত্তি",
+                "en": "Law & Property"
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "department",
+            "order": 9,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "বিদেশ ও প্রবাস",
+                "en": "Overseas & Expatriates"
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "department",
+            "order": 10,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "মহিলা ও শিশু",
+                "en": "Women & Children"
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "department",
+            "order": 11,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "ইয়াতীম ও নওমুসলিম",
+                "en": "Orphans & New Muslims"
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "department",
+            "order": 12,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "আইটি ও ওয়েবসাইট",
+                "en": "IT & Website"
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "department",
+            "order": 13,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "দপ্তর ব্যবস্থাপনা",
+                "en": "Office Management"
+            },
+            "text": {
+                "bn": "",
+                "en": ""
+            }
+        },
+        {
+            "group": "roadmap",
+            "order": 0,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "আন্তর্জাতিক মানের ওপেন লাইব্রেরি",
+                "en": "An international-standard Open Library"
+            },
+            "text": {
+                "bn": "আরবি, বাংলা, ইংরেজি, উর্দুসহ নানা ভাষার বই, গবেষণাপত্র ও দুর্লভ পাণ্ডুলিপির সংগ্রহ।",
+                "en": "Books, research papers and rare manuscripts in Arabic, Bengali, English, Urdu and more."
+            }
+        },
+        {
+            "group": "roadmap",
+            "order": 1,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "গবেষণা ও প্রকাশনা কেন্দ্র",
+                "en": "Research and publication centre"
+            },
+            "text": {
+                "bn": "বই, প্রবন্ধ ও ম্যাগাজিনের নিয়মিত দলীলভিত্তিক প্রকাশনা।",
+                "en": "Regular evidence-based books, articles and magazines."
+            }
+        },
+        {
+            "group": "roadmap",
+            "order": 2,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "দাঈ ও গবেষক তৈরির প্রশিক্ষণ ইনস্টিটিউট",
+                "en": "Training institute for callers and researchers"
+            },
+            "text": {
+                "bn": "দ্বীনি জ্ঞানের সাথে বিজ্ঞান ও যুক্তিবিদ্যায় দক্ষ দাঈ তৈরি।",
+                "en": "Callers skilled in Islamic knowledge as well as science and reasoning."
+            }
+        },
+        {
+            "group": "roadmap",
+            "order": 3,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "ইসলামিক স্কুল, কলেজ ও উচ্চশিক্ষা প্রতিষ্ঠান",
+                "en": "Islamic school, college and higher education"
+            },
+            "text": {
+                "bn": "দ্বীনি জ্ঞানের সাথে গণিত, বিজ্ঞান ও সাহিত্য, ক্যারিয়ার গাইডলাইন এবং বিদেশে উচ্চশিক্ষার সুযোগ।",
+                "en": "Religious knowledge with mathematics, science and literature, career guidance and chances to study abroad."
+            }
+        },
+        {
+            "group": "roadmap",
+            "order": 4,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "ডিজিটাল শিক্ষা ও গবেষণা প্ল্যাটফর্ম",
+                "en": "Digital education and research platform"
+            },
+            "text": {
+                "bn": "অনলাইন ম্যাগাজিন, অ্যাপ ও ডিজিটাল লাইব্রেরি।",
+                "en": "Online magazine, app and digital library."
+            }
+        },
+        {
+            "group": "roadmap",
+            "order": 5,
+            "published": true,
+            "icon": "",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "মানবকল্যাণমূলক স্থায়ী প্রকল্প",
+                "en": "Permanent welfare projects"
+            },
+            "text": {
+                "bn": "ইয়াতীম, বিধবা ও দরিদ্রদের জন্য টেকসই কল্যাণ উদ্যোগ।",
+                "en": "Lasting support for orphans, widows and the poor."
+            }
+        },
+        {
+            "group": "joinWay",
+            "order": 0,
+            "published": true,
+            "icon": "🤝",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "স্বেচ্ছাসেবক",
+                "en": "Volunteer"
+            },
+            "text": {
+                "bn": "দাওয়াহ, শিক্ষা, লাইব্রেরি, মিডিয়া বা সমাজসেবায় সময় ও দক্ষতা দিন।",
+                "en": "Give your time and skills to dawah, education, the library, media or social service."
+            }
+        },
+        {
+            "group": "joinWay",
+            "order": 1,
+            "published": true,
+            "icon": "👥",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "সদস্য",
+                "en": "Member"
+            },
+            "text": {
+                "bn": "জ্ঞানভিত্তিক ও দায়িত্বশীল সমাজ গড়ার এই দীর্ঘমেয়াদি উদ্যোগের অংশ হোন।",
+                "en": "Be part of this long-term effort to build a knowledge-based, responsible society."
+            }
+        },
+        {
+            "group": "joinWay",
+            "order": 2,
+            "published": true,
+            "icon": "❤️",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "দাতা",
+                "en": "Donor"
+            },
+            "text": {
+                "bn": "একটি বই, একটি গাছ বা একজন শিক্ষার্থীর শিক্ষা হতে পারে আপনার সাদাকায়ে জারিয়াহ।",
+                "en": "A book, a tree or a student's education can become your ongoing charity."
+            }
+        },
+        {
+            "group": "joinWay",
+            "order": 3,
+            "published": true,
+            "icon": "🏛",
+            "value": {
+                "bn": "",
+                "en": ""
+            },
+            "title": {
+                "bn": "অংশীদার",
+                "en": "Partner"
+            },
+            "text": {
+                "bn": "মসজিদ, শিক্ষা প্রতিষ্ঠান ও সংগঠনের সাথে যৌথ প্রকল্পে আমরা আগ্রহী।",
+                "en": "We welcome joint projects with mosques, schools and community organisations."
+            }
+        }
+    ],
+    "settings": [
+        {
+            "key": "site",
+            "value": {
+                "bn": {
+                    "name": "ইসলামিক রিসার্চ অর্গানাইজেশন",
+                    "short": "IRO",
+                    "tagline": "জ্ঞান • গবেষণা • দাওয়াহ • মানবকল্যাণ",
+                    "motto": "বিশুদ্ধ জ্ঞানই টেকসই পরিবর্তনের ভিত্তি।"
+                },
+                "en": {
+                    "name": "Islamic Research Organization",
+                    "short": "IRO",
+                    "tagline": "Knowledge • Research • Dawah • Humanitarian Service",
+                    "motto": "Pure knowledge is the foundation of lasting change."
+                }
+            }
+        },
+        {
+            "key": "nav",
+            "value": {
+                "bn": [
+                    {
+                        "href": "/about",
+                        "label": "আমাদের সম্পর্কে"
+                    },
+                    {
+                        "href": "/programs",
+                        "label": "কার্যক্রম"
+                    },
+                    {
+                        "href": "/departments",
+                        "label": "বিভাগসমূহ"
+                    },
+                    {
+                        "href": "/roadmap",
+                        "label": "ভবিষ্যৎ স্বপ্ন"
+                    },
+                    {
+                        "href": "/contact",
+                        "label": "যোগাযোগ"
+                    }
+                ],
+                "en": [
+                    {
+                        "href": "/about",
+                        "label": "About Us"
+                    },
+                    {
+                        "href": "/programs",
+                        "label": "Programs"
+                    },
+                    {
+                        "href": "/departments",
+                        "label": "Departments"
+                    },
+                    {
+                        "href": "/roadmap",
+                        "label": "Our Future"
+                    },
+                    {
+                        "href": "/contact",
+                        "label": "Contact"
+                    }
+                ]
+            }
+        },
+        {
+            "key": "ui",
+            "value": {
+                "bn": {
+                    "meta": {
+                        "title": "ইসলামিক রিসার্চ অর্গানাইজেশন (IRO)",
+                        "desc": "কুরআন ও সহীহ সুন্নাহর আলোকে জ্ঞান, গবেষণা, দাওয়াহ ও মানবকল্যাণে নিবেদিত অরাজনৈতিক ও অলাভজনক প্রতিষ্ঠান।"
+                    },
+                    "header": {
+                        "menu": "মেনু",
+                        "close": "বন্ধ",
+                        "join": "যুক্ত হোন",
+                        "main": "প্রধান মেনু",
+                        "mobile": "মোবাইল মেনু",
+                        "switchLabel": "English"
+                    },
+                    "footer": {
+                        "about": "অরাজনৈতিক, অলাভজনক, শিক্ষা ও গবেষণাভিত্তিক ইসলামী প্রতিষ্ঠান।",
+                        "quote": "“আমরা বিশ্বাস করি, বিশুদ্ধ জ্ঞানই মানুষকে আল্লাহর দিকে আহ্বান করে, চরিত্রকে পরিশুদ্ধ করে এবং সমাজে স্থায়ী কল্যাণ প্রতিষ্ঠার পথ সুগম করে।”"
+                    },
+                    "home": {
+                        "kicker": "অরাজনৈতিক, অলাভজনক, শিক্ষা ও গবেষণাভিত্তিক ইসলামী প্রতিষ্ঠান",
+                        "title": "বিশুদ্ধ জ্ঞানের আলোয় একটি আদর্শ সমাজ নির্মাণ",
+                        "lead": "পবিত্র কুরআন ও সহীহ সুন্নাহর আলোকে শিক্ষা, গবেষণা, দাওয়াহ ও মানবকল্যাণের একটি দীর্ঘমেয়াদি উদ্যোগ।",
+                        "ctaJoin": "আমাদের সাথে যুক্ত হোন",
+                        "ctaPrograms": "কার্যক্রম দেখুন",
+                        "ayah": "তুমি তোমার রবের পথে হিকমত ও সুন্দর উপদেশের মাধ্যমে আহ্বান কর।",
+                        "ayahSrc": "সূরা আন-নাহল, ১৬:১২৫",
+                        "programsTitle": "আমাদের কার্যক্রম",
+                        "programsLead": "জ্ঞান, দাওয়াহ ও মানবকল্যাণের সমন্বিত উদ্যোগ।",
+                        "allPrograms": "সব কার্যক্রম",
+                        "journeyTitle": "ছোট সূচনা, দীর্ঘ পথচলার অঙ্গীকার",
+                        "journeyLead": "আলহামদুলিল্লাহ, সীমিত সামর্থ্য নিয়ে শুরু হলেও আল্লাহর অনুগ্রহে এ পর্যন্ত যা করা সম্ভব হয়েছে:",
+                        "hadith": "মানুষ মারা গেলে তিনটি আমল ছাড়া তার সকল আমল বন্ধ হয়ে যায়: সাদাকায়ে জারিয়া, উপকারী ইলম, এবং নেককার সন্তান যে তার জন্য দু'আ করে।",
+                        "hadithSrc": "সহীহ মুসলিম",
+                        "joinTitle": "এই যাত্রার অংশ হোন",
+                        "joinText": "স্বেচ্ছাসেবক, সদস্য, দাতা বা অংশীদার, যেভাবেই হোক, আপনার অংশগ্রহণ এই উদ্যোগকে সমৃদ্ধ করবে।",
+                        "joinBtn": "যুক্ত হওয়ার উপায়"
+                    },
+                    "about": {
+                        "title": "আমাদের সম্পর্কে",
+                        "lead": "একটি সংগঠন নয়, একটি দীর্ঘমেয়াদি জ্ঞান ও সমাজ গঠনের উদ্যোগ।",
+                        "visionTitle": "আমাদের ভিশন",
+                        "vision": "আমরা এমন একটি সমাজ বিনির্মাণে ভূমিকা রাখতে চাই, যেখানে কুরআন ও সহীহ সুন্নাহর আলোকে ব্যক্তি, পরিবার ও সমাজের প্রতিটি স্তরে ঈমান, ইলম, নৈতিকতা, ন্যায়বিচার ও মানবকল্যাণের মূল্যবোধ প্রতিষ্ঠিত হবে।",
+                        "missionTitle": "আমাদের মিশন",
+                        "mission": "শিক্ষা, গবেষণা, দাওয়াহ, প্রকাশনা, প্রশিক্ষণ ও মানবকল্যাণমূলক কার্যক্রমের মাধ্যমে বিশুদ্ধ ইসলামী জ্ঞান মানুষের কাছে পৌঁছে দেওয়া এবং ব্যক্তি ও সমাজে টেকসই পরিবর্তন আনা।",
+                        "principlesTitle": "আমাদের মূলনীতি",
+                        "principlesLead": [
+                            "কালিমা তাইয়্যেবা, ",
+                            ", আমাদের মূলনীতি: নির্ভেজাল তাওহীদ ও সুন্নাহর আলোকে জীবন ও সংগঠন পরিচালনা।"
+                        ],
+                        "goalsTitle": "লক্ষ্য ও উদ্দেশ্য"
+                    },
+                    "programs": {
+                        "title": "আমাদের কার্যক্রম",
+                        "lead": "জ্ঞান, দাওয়াহ ও মানবকল্যাণের সমন্বিত উদ্যোগ।",
+                        "details": "বিস্তারিত দেখুন",
+                        "all": "সব কার্যক্রম",
+                        "whatWeDo": "আমরা যা করি",
+                        "inNumbers": "সংখ্যায়",
+                        "ongoing": "চলমান কার্যক্রম",
+                        "planned": "পরিকল্পনাধীন",
+                        "plannedNote": "এই কার্যক্রম এখনো পরিকল্পনা পর্যায়ে আছে। আপনার সহযোগিতা একে বাস্তব করতে পারে।",
+                        "others": "অন্যান্য কার্যক্রম",
+                        "ctaTitle": "এই কার্যক্রমে অংশ নিতে চান?",
+                        "ctaText": "স্বেচ্ছাসেবক, দাতা বা অংশীদার হিসেবে যুক্ত হয়ে এই উদ্যোগকে এগিয়ে নিন।",
+                        "ctaBtn": "যুক্ত হোন"
+                    },
+                    "departments": {
+                        "title": "প্রস্তাবিত বিভাগসমূহ",
+                        "lead": "প্রতিটি বিভাগে অন্তত একজন দায়িত্বশীল, একজন সহকারী এবং মাসিক রিপোর্ট ব্যবস্থা থাকবে।",
+                        "suffix": "{d} বিভাগ"
+                    },
+                    "roadmap": {
+                        "title": "আমাদের ভবিষ্যৎ স্বপ্ন",
+                        "lead": "আজকের একটি ছোট উদ্যোগই আগামী দিনের একটি মহান প্রতিষ্ঠানের ভিত্তি হতে পারে।"
+                    },
+                    "join": {
+                        "title": "আপনার অংশগ্রহণেই পূর্ণতা পাবে এই যাত্রা",
+                        "lead": "একটি স্বপ্ন, একটি দায়িত্ব, একটি চলমান সাদাকায়ে জারিয়াহ।",
+                        "as": "{t} হিসেবে"
+                    },
+                    "contact": {
+                        "title": "যোগাযোগ",
+                        "lead": "আপনার একটি অংশগ্রহণ কিংবা সহযোগিতাই হতে পারে বহু মানুষের উপকারের সূচনা।",
+                        "items": [
+                            {
+                                "icon": "📍",
+                                "label": "ঠিকানা",
+                                "value": "............"
+                            },
+                            {
+                                "icon": "📞",
+                                "label": "মোবাইল",
+                                "value": "............"
+                            },
+                            {
+                                "icon": "📧",
+                                "label": "ইমেইল",
+                                "value": "............"
+                            },
+                            {
+                                "icon": "📘",
+                                "label": "ফেসবুক",
+                                "value": "............"
+                            },
+                            {
+                                "icon": "▶",
+                                "label": "ইউটিউব",
+                                "value": "............"
+                            }
+                        ]
+                    },
+                    "form": {
+                        "name": "নাম",
+                        "contact": "মোবাইল বা ইমেইল",
+                        "type": "কীভাবে যুক্ত হতে চান",
+                        "types": ["স্বেচ্ছাসেবক", "সদস্য", "দাতা", "অংশীদার"],
+                        "message": "আপনার দক্ষতা বা বার্তা",
+                        "send": "আবেদন পাঠান",
+                        "sending": "পাঠানো হচ্ছে…",
+                        "retry": "আবার চেষ্টা করুন",
+                        "done": "জাযাকাল্লাহু খাইরান। আপনার আবেদন পেয়েছি, শীঘ্রই যোগাযোগ করব।"
+                    }
+                },
+                "en": {
+                    "meta": {
+                        "title": "Islamic Research Organization (IRO)",
+                        "desc": "A non-political, non-profit organization devoted to knowledge, research, dawah and humanitarian service in the light of the Quran and authentic Sunnah."
+                    },
+                    "header": {
+                        "menu": "Menu",
+                        "close": "Close",
+                        "join": "Join us",
+                        "main": "Main menu",
+                        "mobile": "Mobile menu",
+                        "switchLabel": "বাংলা"
+                    },
+                    "footer": {
+                        "about": "A non-political, non-profit Islamic organization focused on education and research.",
+                        "quote": "“We believe pure knowledge calls people to Allah, refines character and paves the way for lasting good in society.”"
+                    },
+                    "home": {
+                        "kicker": "A non-political, non-profit organization for education and research",
+                        "title": "Building an ideal society in the light of pure knowledge",
+                        "lead": "A long-term effort for education, research, dawah and humanitarian service in the light of the Quran and authentic Sunnah.",
+                        "ctaJoin": "Join us",
+                        "ctaPrograms": "See our programs",
+                        "ayah": "Invite to the way of your Lord with wisdom and good instruction.",
+                        "ayahSrc": "Surah An-Nahl, 16:125",
+                        "programsTitle": "Our programs",
+                        "programsLead": "Knowledge, dawah and humanitarian service, together.",
+                        "allPrograms": "All programs",
+                        "journeyTitle": "A small start, a long commitment",
+                        "journeyLead": "Alhamdulillah, we began with limited means, and by Allah's grace this is what has been possible so far:",
+                        "hadith": "When a person dies, all their deeds end except three: ongoing charity, beneficial knowledge, or a righteous child who prays for them.",
+                        "hadithSrc": "Sahih Muslim",
+                        "joinTitle": "Be part of this journey",
+                        "joinText": "As a volunteer, member, donor or partner, your involvement will strengthen this effort.",
+                        "joinBtn": "Ways to join"
+                    },
+                    "about": {
+                        "title": "About us",
+                        "lead": "Not just an organization, but a long-term effort to build knowledge and society.",
+                        "visionTitle": "Our vision",
+                        "vision": "We want to help build a society where, in the light of the Quran and authentic Sunnah, faith, knowledge, ethics, justice and compassion are established at every level of the individual, the family and society.",
+                        "missionTitle": "Our mission",
+                        "mission": "To bring pure Islamic knowledge to people through education, research, dawah, publication, training and welfare work, and to bring lasting change to individuals and society.",
+                        "principlesTitle": "Our principles",
+                        "principlesLead": [
+                            "The Kalimah Tayyibah, ",
+                            ", is our founding principle: to run our lives and the organization on pure Tawhid and the Sunnah."
+                        ],
+                        "goalsTitle": "Aims and objectives"
+                    },
+                    "programs": {
+                        "title": "Our programs",
+                        "lead": "Knowledge, dawah and humanitarian service, together.",
+                        "details": "View details",
+                        "all": "All programs",
+                        "whatWeDo": "What we do",
+                        "inNumbers": "In numbers",
+                        "ongoing": "Ongoing program",
+                        "planned": "Planned",
+                        "plannedNote": "This program is still at the planning stage. Your support can make it real.",
+                        "others": "Other programs",
+                        "ctaTitle": "Want to take part in this program?",
+                        "ctaText": "Join as a volunteer, donor or partner and help move this work forward.",
+                        "ctaBtn": "Join us"
+                    },
+                    "departments": {
+                        "title": "Proposed departments",
+                        "lead": "Each department will have at least one head, one assistant and a monthly reporting system.",
+                        "suffix": "{d} Department"
+                    },
+                    "roadmap": {
+                        "title": "Our future plans",
+                        "lead": "A small initiative today can be the foundation of a great institution tomorrow."
+                    },
+                    "join": {
+                        "title": "This journey is completed by your participation",
+                        "lead": "One dream, one responsibility, one ongoing sadaqah jariyah.",
+                        "as": "As a {t}"
+                    },
+                    "contact": {
+                        "title": "Contact",
+                        "lead": "Your involvement or support can be the beginning of benefit for many people.",
+                        "items": [
+                            {
+                                "icon": "📍",
+                                "label": "Address",
+                                "value": "............"
+                            },
+                            {
+                                "icon": "📞",
+                                "label": "Phone",
+                                "value": "............"
+                            },
+                            {
+                                "icon": "📧",
+                                "label": "Email",
+                                "value": "............"
+                            },
+                            {
+                                "icon": "📘",
+                                "label": "Facebook",
+                                "value": "............"
+                            },
+                            {
+                                "icon": "▶",
+                                "label": "YouTube",
+                                "value": "............"
+                            }
+                        ]
+                    },
+                    "form": {
+                        "name": "Name",
+                        "contact": "Phone or email",
+                        "type": "How would you like to join",
+                        "types": ["Volunteer", "Member", "Donor", "Partner"],
+                        "message": "Your skills or message",
+                        "send": "Send application",
+                        "sending": "Sending…",
+                        "retry": "Please try again",
+                        "done": "Jazakallahu khayran. We received your application and will contact you soon."
+                    }
+                }
+            }
+        }
+    ]
+}
