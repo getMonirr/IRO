@@ -1,4 +1,46 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -15,8 +57,49 @@ const notFoundAPIHandler_1 = __importDefault(require("./app/middlewares/notFound
 const rateLimit_1 = require("./app/middlewares/rateLimit");
 const requestLogger_1 = __importDefault(require("./app/middlewares/requestLogger"));
 const routes_1 = __importDefault(require("./app/routes"));
+const DB_1 = __importStar(require("./app/DB"));
+const logger_1 = __importDefault(require("./app/utils/logger"));
+const config_2 = require("./app/config");
 const app = (0, express_1.default)();
 app.disable('x-powered-by');
+let serverlessConnectionPromise;
+let serverlessSeedPromise;
+if (process.env.VERCEL === '1') {
+    app.use((req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+        try {
+            (0, config_2.assertConfig)();
+            if (mongoose_1.default.connection.readyState !== 1) {
+                if (!serverlessConnectionPromise) {
+                    serverlessConnectionPromise = mongoose_1.default
+                        .connect(config_1.default.database_url, { serverSelectionTimeoutMS: 5000 })
+                        .then(() => {
+                        logger_1.default.info('MongoDB connected');
+                    })
+                        .catch(err => {
+                        serverlessConnectionPromise = undefined;
+                        throw err;
+                    });
+                }
+                yield serverlessConnectionPromise;
+            }
+            if (!serverlessSeedPromise) {
+                serverlessSeedPromise = (() => __awaiter(void 0, void 0, void 0, function* () {
+                    yield (0, DB_1.default)();
+                    yield (0, DB_1.seedContent)();
+                }))().catch(err => {
+                    serverlessSeedPromise = undefined;
+                    throw err;
+                });
+            }
+            yield serverlessSeedPromise;
+            next();
+        }
+        catch (err) {
+            logger_1.default.fatal({ err }, 'failed to initialize serverless database');
+            res.status(500).json({ message: 'Database initialization failed' });
+        }
+    }));
+}
 // correct client IP behind a reverse proxy (needed for rate limits and audit logs)
 if (config_1.default.NODE_ENV === 'production')
     app.set('trust proxy', 1);
