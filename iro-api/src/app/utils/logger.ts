@@ -14,14 +14,8 @@ const logger = pino({
     ],
     censor: '[redacted]',
   },
-  // production: JSON to stdout (Docker / log collectors) · development: pretty
-  transport:
-    config.NODE_ENV === 'production'
-      ? undefined
-      : {
-          target: 'pino-pretty',
-          options: { colorize: true, translateTime: 'SYS:HH:MM:ss' },
-        },
+  // Vercel and other serverless platforms log JSON from stdout.
+  // Pretty-printing requires pino-pretty and is not reliable in packaged deployments.
 })
 
 export default logger
