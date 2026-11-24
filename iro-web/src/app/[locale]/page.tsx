@@ -2,8 +2,12 @@ import { Arabesque } from "@/components/Arabesque";
 import { AyahCard } from "@/components/AyahCard";
 import { ContactIcon } from "@/components/ContactIcon";
 import { ContactValue } from "@/components/ContactValue";
+import { CountUp } from "@/components/CountUp";
 import { HeroCarousel } from "@/components/HeroCarousel";
+import { PostCard } from "@/components/PostCard";
 import { ProgramCard } from "@/components/ProgramCard";
+import { Reveal } from "@/components/Reveal";
+import { ScrollDownAnimation } from "@/components/ScrollDownAnimation";
 import { getT, type Params } from "@/i18n/server";
 import Link from "next/link";
 
@@ -14,31 +18,31 @@ export default async function Home({ params }: { params: Params }) {
     t.nav.find((item) => item.href === href)?.label ?? "";
   return (
     <>
-      <section className="relative flex min-h-svh flex-col overflow-hidden bg-brand text-cream">
-        <Arabesque className="pattern-unfold absolute inset-0 text-gold opacity-25 [mask-image:linear-gradient(to_left,black,transparent_75%)]" />
+      <section className="relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden bg-brand text-cream xl:min-h-[calc(100svh-6rem)]">
+        <Arabesque className="pattern-unfold absolute inset-0 text-gold opacity-25 mask-[linear-gradient(to_left,black,transparent_75%)]" />
         <div className="relative mx-auto grid w-full flex-1 items-center gap-10 px-5 pb-24 pt-12 md:max-w-6xl md:grid-cols-[1.2fr_1fr] md:gap-14 md:py-16">
-          <div>
+          <div className="hero-copy">
             <p className="text-gold-soft">{h.kicker}</p>
-            <h1 className="mt-4 font-display text-4xl font-bold leading-snug md:text-6xl md:leading-[1.25]">
+            <h1 className="mt-4 font-display text-4xl font-bold leading-snug md:text-6xl md:leading-tight">
               {h.title}
             </h1>
             <p className="mt-6 max-w-xl text-lg opacity-90">{h.lead}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href={`/${locale}/join`}
-                className="rounded-full bg-gold px-7 py-2.5 font-semibold text-brand-dark hover:bg-gold-soft"
+                className="motion-sheen rounded-full bg-gold px-7 py-2.5 font-semibold text-brand-dark hover:bg-gold-soft"
               >
                 {h.ctaJoin}
               </Link>
               <Link
                 href={`/${locale}/programs`}
-                className="rounded-full border border-gold px-7 py-2.5 hover:bg-gold/10"
+                className="motion-sheen rounded-full border border-gold px-7 py-2.5 hover:bg-gold/10"
               >
                 {h.ctaPrograms}
               </Link>
             </div>
           </div>
-          <div>
+          <div className="hero-visual">
             <HeroCarousel
               arabic="ٱدْعُ إِلَىٰ سَبِيلِ رَبِّكَ بِٱلْحِكْمَةِ وَٱلْمَوْعِظَةِ ٱلْحَسَنَةِ"
               translation={h.ayah}
@@ -51,23 +55,18 @@ export default async function Home({ params }: { params: Params }) {
         <Link
           href="#about"
           aria-label={h.scrollDown}
-          className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-gold-soft transition hover:text-gold"
+          className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-gold transition hover:text-gold-soft"
         >
           <span className="flex flex-col items-center gap-1 text-xs">
             <span>{h.scrollDown}</span>
-            <span
-              className="grid h-14 w-14 animate-bounce place-items-center rounded-full border-2 border-gold bg-black/35 text-5xl leading-none shadow-[0_4px_18px_rgba(0,0,0,0.75)]"
-              aria-hidden
-            >
-              ↓
-            </span>
+            <ScrollDownAnimation size={64} />
           </span>
         </Link>
         <div className="h-1 bg-gold" />
       </section>
 
       <section id="about" className="mx-auto max-w-6xl px-5 py-16 scroll-mt-24">
-        <div className="grid gap-10 md:grid-cols-2">
+        <Reveal stagger className="grid gap-10 md:grid-cols-2">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold">
               {navLabel("/about")}
@@ -89,7 +88,7 @@ export default async function Home({ params }: { params: Params }) {
               {navLabel("/about")}
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section
@@ -103,16 +102,20 @@ export default async function Home({ params }: { params: Params }) {
           <div className="mx-auto mt-3 h-1 w-16 bg-gold" />
           <p className="mt-4 text-ink/80">{h.programsLead}</p>
         </div>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal
+          stagger
+          className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        >
           {t.programs.map((p) => (
             <ProgramCard
               key={p.id}
               locale={locale}
               p={p}
               label={t.ui.programs.details}
+              donateLabel={t.ui.donation.button}
             />
           ))}
-        </div>
+        </Reveal>
         <div className="mt-10 text-center">
           <Link
             href={`/${locale}/programs`}
@@ -136,7 +139,7 @@ export default async function Home({ params }: { params: Params }) {
             {t.departments.map((department) => (
               <li
                 key={department}
-                className="border-l-4 border-gold bg-cream px-4 py-4 font-display font-bold text-brand shadow-sm"
+                className="box-motion group border-l-4 border-gold bg-cream px-4 py-4 font-display font-bold text-brand shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand hover:bg-brand hover:text-cream hover:shadow-lg"
               >
                 {t.ui.departments.suffix.replace("{d}", department)}
               </li>
@@ -150,7 +153,8 @@ export default async function Home({ params }: { params: Params }) {
             {t.stats.map((s) => (
               <div key={s.label} className="border-l-4 border-gold pl-4">
                 <dt className="font-display text-4xl font-bold text-brand">
-                  {s.value} <span className="text-xl">{s.label}</span>
+                  <CountUp value={s.value} />{" "}
+                  <span className="text-xl">{s.label}</span>
                 </dt>
                 <dd className="mt-1 text-sm text-ink/75">{s.note}</dd>
               </div>
@@ -176,20 +180,22 @@ export default async function Home({ params }: { params: Params }) {
           {t.ui.roadmap.title}
         </h2>
         <p className="mt-3 max-w-2xl">{t.ui.roadmap.lead}</p>
-        <ol className="relative mt-10 border-l-2 border-gold pl-8">
+        <Reveal stagger className="relative mt-10 border-l-2 border-gold pl-8">
           {t.roadmap.map((item) => (
-            <li key={item.title} className="relative pb-8 last:pb-0">
+            <li key={item.title} className="group relative pb-8 last:pb-0">
               <span
-                className="absolute -left-[41px] top-1 h-5 w-5 rotate-45 border-2 border-gold bg-cream"
+                className="absolute -left-10.25 top-1 h-5 w-5 rotate-45 border-2 border-gold bg-cream transition duration-300 group-hover:rotate-90 group-hover:bg-gold"
                 aria-hidden
               />
-              <h3 className="font-display text-xl font-bold text-brand">
+              <h3 className="font-display text-xl font-bold text-brand transition group-hover:translate-x-2">
                 {item.title}
               </h3>
-              <p className="mt-1 text-ink/80">{item.text}</p>
+              <p className="mt-1 text-ink/80 transition group-hover:translate-x-2">
+                {item.text}
+              </p>
             </li>
           ))}
-        </ol>
+        </Reveal>
         <Link
           href={`/${locale}/roadmap`}
           className="mt-8 inline-block border-b-2 border-gold font-semibold text-brand"
@@ -197,6 +203,48 @@ export default async function Home({ params }: { params: Params }) {
           {navLabel("/roadmap")}
         </Link>
       </section>
+
+      {t.posts.length > 0 && (
+        <section
+          id="journal"
+          className="mx-auto max-w-6xl scroll-mt-24 px-5 py-16"
+        >
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold">
+                {locale === "bn" ? "সংবাদের জানালা" : "Latest updates"}
+              </p>
+              <h2 className="mt-3 font-display text-3xl font-bold text-brand">
+                {locale === "bn" ? "ব্লগসমূহ ও সংবাদ" : "Blogs & News"}
+              </h2>
+            </div>
+            <div className="flex gap-5">
+              <Link
+                href={`/${locale}/blog`}
+                className="border-b-2 border-gold font-semibold text-brand"
+              >
+                {navLabel("/blog")}
+              </Link>
+              <Link
+                href={`/${locale}/news`}
+                className="border-b-2 border-gold font-semibold text-brand"
+              >
+                {navLabel("/news")}
+              </Link>
+            </div>
+          </div>
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            {t.posts.slice(0, 4).map((post) => (
+              <PostCard
+                key={post.id}
+                post={post}
+                locale={locale}
+                featured={post.featured}
+              />
+            ))}
+          </div>
+        </section>
+      )}
 
       <section id="join" className="mx-auto max-w-4xl px-5 py-16 scroll-mt-24">
         <AyahCard

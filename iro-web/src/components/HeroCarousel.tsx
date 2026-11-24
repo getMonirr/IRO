@@ -50,7 +50,7 @@ export function HeroCarousel({
   };
 
   return (
-    <div className="relative h-[clamp(390px,68svh,680px)] overflow-hidden rounded-sm border-2 border-gold/70 bg-brand-dark shadow-xl">
+    <div className="box-motion motion-float relative h-[clamp(390px,68svh,680px)] overflow-hidden rounded-sm border-2 border-gold/70 bg-brand-dark shadow-xl">
       {slides.map((slide, index) => (
         <img
           key={slide.src}
@@ -65,7 +65,7 @@ export function HeroCarousel({
         <p
           lang="ar"
           dir="rtl"
-          className="font-arabic text-2xl leading-[2] text-center drop-shadow-[0_2px_6px_rgba(0,0,0,1)] md:text-3xl"
+          className="font-arabic text-2xl leading-loose text-center drop-shadow-[0_2px_6px_rgba(0,0,0,1)] md:text-3xl"
         >
           {arabic}
         </p>

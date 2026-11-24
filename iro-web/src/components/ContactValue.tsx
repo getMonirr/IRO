@@ -10,7 +10,25 @@ function toDialableNumber(value: string) {
     .replace(/[^\d+]/g, "");
 }
 
-function CopyIcon() {
+function CopyIcon({ copied = false }: { copied?: boolean }) {
+  if (copied) {
+    return (
+      <svg
+        viewBox="0 0 24 24"
+        className="h-4 w-4 animate-[pulse_.45s_ease-out]"
+        aria-hidden
+      >
+        <path
+          d="M4 12.5 9 17l11-11"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.4"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
   return (
     <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden>
       <rect
@@ -57,17 +75,28 @@ export function ContactValue({
       value.split("/").filter(Boolean).pop()?.replace(/^@/, "") ?? value;
 
     return (
-      <a
-        href={value}
-        target="_blank"
-        rel="noreferrer"
-        className={`inline-flex items-start font-medium text-gold underline-offset-4 hover:text-gold-soft hover:underline ${className}`}
-      >
-        {handle}
-        <span className="relative -top-1 ml-1 text-[0.7em]" aria-hidden>
-          ↗
-        </span>
-      </a>
+      <span className={`inline-flex items-center gap-2 ${className}`}>
+        <a
+          href={value}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-start font-medium text-brand underline-offset-4 hover:text-brand-dark hover:underline"
+        >
+          {handle}
+          <span className="relative -top-1 ml-1 text-[0.7em]" aria-hidden>
+            ↗
+          </span>
+        </a>
+        <button
+          type="button"
+          onClick={copyValue}
+          aria-label={copied ? copiedLabel : copyLabel}
+          title={copied ? copiedLabel : copyLabel}
+          className={`transition duration-200 ${copied ? "scale-125 rotate-6 text-green-700" : "text-brand/70 hover:scale-110 hover:text-brand"}`}
+        >
+          <CopyIcon copied={copied} />
+        </button>
+      </span>
     );
   }
 
@@ -78,7 +107,7 @@ export function ContactValue({
     <span className={`inline-flex items-center gap-2 ${className}`}>
       <a
         href={href}
-        className="font-medium text-gold underline-offset-4 hover:text-gold-soft hover:underline"
+        className={`font-medium text-brand underline-offset-4 hover:text-brand-dark hover:underline ${className}`}
       >
         {value}
       </a>
@@ -87,9 +116,9 @@ export function ContactValue({
         onClick={copyValue}
         aria-label={copied ? copiedLabel : copyLabel}
         title={copied ? copiedLabel : copyLabel}
-        className="text-gold-soft hover:text-gold"
+        className={`transition duration-200 ${copied ? "scale-125 rotate-6 text-green-700" : "text-brand/70 hover:scale-110 hover:text-brand"}`}
       >
-        <CopyIcon />
+        <CopyIcon copied={copied} />
       </button>
     </span>
   );

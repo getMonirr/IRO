@@ -7,14 +7,56 @@ export const site = {
   motto: "বিশুদ্ধ জ্ঞানই টেকসই পরিবর্তনের ভিত্তি।",
 };
 
+export type PublicPost = {
+  id: string;
+  slug: string;
+  type: "blog" | "news";
+  icon: string;
+  coverImage: string;
+  category: string;
+  title: string;
+  excerpt: string;
+  body: string;
+  author: string;
+  featured: boolean;
+  publishedAt: string;
+  viewCount: number;
+};
+
+export type PublicDonationMethod = {
+  id: string;
+  slug: string;
+  region: "bangladesh" | "abroad";
+  type:
+    | "mobile-banking"
+    | "bank-transfer"
+    | "card"
+    | "paypal"
+    | "crypto"
+    | "other";
+  name: string;
+  provider: string;
+  accountName: string;
+  accountNumber: string;
+  instructions: string;
+  checkoutUrl: string;
+  currency: string;
+};
+
 export const nav = [
   { href: "/", label: "হোম" },
   { href: "/about", label: "আমাদের সম্পর্কে" },
   { href: "/programs", label: "কার্যক্রম" },
   { href: "/departments", label: "বিভাগসমূহ" },
   { href: "/roadmap", label: "ভবিষ্যৎ স্বপ্ন" },
+  { href: "/blog", label: "ব্লগসমূহ" },
+  { href: "/news", label: "সংবাদ" },
   { href: "/contact", label: "যোগাযোগ" },
 ];
+
+export const posts: PublicPost[] = [];
+
+export const donationMethods: PublicDonationMethod[] = [];
 
 export const stats = [
   {
@@ -203,6 +245,29 @@ export const ui = {
     main: "প্রধান মেনু",
     mobile: "মোবাইল মেনু",
     switchLabel: "English",
+    donate: "সহযোগিতা করুন",
+  },
+  donation: {
+    title: "আপনার সহযোগিতা একটি চলমান সদাকায়ে জারিয়াহ",
+    lead: "বাংলাদেশ থেকে অথবা পৃথিবীর যেকোনো স্থান থেকে আপনার পছন্দের কার্যক্রমে সহযোগিতা করুন।",
+    button: "দান করুন",
+    amount: "পরিমাণ",
+    program: "কোন কার্যক্রমে সহযোগিতা করবেন?",
+    general: "সাধারণ তহবিল",
+    note: "নোট (ঐচ্ছিক)",
+    methods: "পেমেন্ট পদ্ধতি",
+    bangladesh: "বাংলাদেশ",
+    abroad: "বিদেশ",
+    accountName: "অ্যাকাউন্টের নাম",
+    accountNumber: "অ্যাকাউন্ট নম্বর",
+    instructions: "নির্দেশনা",
+    proceed: "পেমেন্ট পেজ খুলুন",
+    setup: "পেমেন্ট পদ্ধতি শিগগিরই যোগ করা হবে।",
+    chat: "যোগাযোগ করুন",
+  },
+  floating: {
+    donate: "দান করুন",
+    chat: "চ্যাট করুন",
   },
   footer: {
     about: "অরাজনৈতিক, অলাভজনক, শিক্ষা ও গবেষণাভিত্তিক ইসলামী প্রতিষ্ঠান।",
@@ -437,6 +502,8 @@ export const programExtras = {
 export const bn = {
   site,
   nav,
+  posts,
+  donationMethods,
   stats,
   programs,
   programExtras,

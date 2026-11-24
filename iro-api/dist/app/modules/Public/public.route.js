@@ -10,5 +10,6 @@ const public_controller_1 = require("./public.controller");
 const public_validation_1 = require("./public.validation");
 const router = express_1.default.Router();
 // the website reads all of its content from this one endpoint
+router.post('/posts/:slug/view', public_controller_1.PublicControllers.incrementPostView);
 router.get('/content', (0, validateRequest_1.default)(public_validation_1.PublicValidation.getContentValidationSchema), public_controller_1.PublicControllers.getPublicContent);
 exports.PublicRoutes = router;

@@ -1115,6 +1115,259 @@
       }
     }
   ],
+  "posts": [
+    {
+      "slug": "knowledge-with-purpose",
+      "type": "blog",
+      "icon": "📚",
+      "coverImage": "https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1600&q=82",
+      "category": { "bn": "গবেষণা", "en": "Research" },
+      "title": {
+        "bn": "কেন জ্ঞান কেবল অর্জন নয়, বরং আমলও হওয়া উচিত",
+        "en": "Why Knowledge Must Become Action, Not Just Information"
+      },
+      "excerpt": {
+        "bn": "দলিলভিত্তিক জ্ঞান মানুষের চিন্তা ও চরিত্রকে কীভাবে বদলে দেয়, এবং সমাজে তার বাস্তব প্রভাব কী।",
+        "en": "How evidence-based knowledge transforms thought and character, and creates a practical impact in society."
+      },
+      "body": {
+        "bn": "ইসলামে জ্ঞান শুধু তথ্য সংগ্রহ নয়। জ্ঞান আল্লাহর প্রতি ভয়, নৈতিকতা, ন্যায়বিচার এবং সৎকর্মে পরিণত হওয়ার জন্য প্রয়োজন। কুরআন ও সহীহ সুন্নাহর আলোকে প্রমাণ যাচাই করা, সুন্নাহর মানহাজ বোঝা এবং দৈনন্দিন জীবনে তা ব্যবহার করাই শিক্ষার প্রকৃত ফল। ব্যক্তির বদলই সমাজের সংস্কারের শুরু।",
+        "en": "In Islam, knowledge is not merely the collection of information. It should lead to awe of Allah, ethics, justice and righteous action. Reading evidence in the light of the Quran and authentic Sunnah, understanding the way of the Salaf, and applying it daily is the true fruit of learning. Personal reform is the beginning of social reform."
+      },
+      "author": { "bn": "IRO গবেষণা দল", "en": "IRO Research Team" },
+      "published": true,
+      "featured": true,
+      "publishedAt": "2026-11-20T12:00:00.000Z",
+      "viewCount": 284
+    },
+    {
+      "slug": "open-library-reading-habit",
+      "type": "blog",
+      "icon": "📖",
+      "coverImage": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1600&q=82",
+      "category": { "bn": "পাঠচক্র", "en": "Reading" },
+      "title": {
+        "bn": "নিয়মিত পাঠচক্র মানুষের মন ও পরিবার বদলে দেয়",
+        "en": "A Regular Reading Circle Can Transform People and Families"
+      },
+      "excerpt": {
+        "bn": "ছোট একটি পাঠব্যবস্থা কেমন করে জ্ঞান, বন্ধুত্ব ও দায়িত্ববোধ গড়ে তোলে।",
+        "en": "How a small learning routine builds knowledge, friendship and responsibility."
+      },
+      "body": {
+        "bn": "নিয়মিত পাঠচক্র কেবল বই পড়ার আয়োজন নয়। এতে অংশগ্রহণকারীরা নতুন ধারণা শেয়ার করে, প্রশ্ন করে, দুর্বল বিষয় বুঝে এবং বইকে জীবনের কাজে লাগাতে শেখে। নির্দিষ্ট সময়, সংকুচিত পাঠ্যসূচি এবং মাসিক আলোচনার মাধ্যমে একটি পরিবার-মিত্র পাঠপ্রক্রিয়া গড়ে তোলা যায়।",
+        "en": "A regular reading circle is more than a book meeting. Participants share ideas, ask questions, clarify difficult topics and learn to apply a book practically. A fixed schedule, a compact syllabus and monthly discussion can create a lasting, friendly learning routine."
+      },
+      "author": { "bn": "উন্মুক্ত লাইব্রেরি", "en": "Open Library Team" },
+      "published": true,
+      "featured": false,
+      "publishedAt": "2026-11-15T12:00:00.000Z",
+      "viewCount": 176
+    },
+    {
+      "slug": "youth-and-dawah",
+      "type": "blog",
+      "icon": "🕌",
+      "coverImage": "https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1600&q=82",
+      "category": { "bn": "দাওয়াহ", "en": "Dawah" },
+      "title": {
+        "bn": "তরুণদের জন্য হিকমতপূর্ণ ও সৌহার্দ্যপূর্ণ দাওয়াহ",
+        "en": "Wisdom-Based Dawah for the Next Generation"
+      },
+      "excerpt": {
+        "bn": "জ্ঞান, ধৈর্য ও মানুষের অবস্থান বুঝে দাওয়াহ করার চারটি মূলনীতি।",
+        "en": "Four principles for inviting others with knowledge, patience and understanding."
+      },
+      "body": {
+        "bn": "কারো অবস্থা না বুঝে তর্ক শুরু করা দাওয়াহকে দুর্বল করে। হিকমত, সুন্দর উপদেশ এবং সর্বোত্তম পদ্ধতিতে কথা বলা জরুরি। দলীল পরিষ্কারভাবে উপস্থাপন, ব্যক্তিগত আক্রমণ এড়ানো, ভুল থেকে শেখা এবং উত্তরের সীমাবদ্ধতা স্বীকার করাও একজন দাঈর সৌন্দর্য।",
+        "en": "Starting an argument without understanding another person's situation weakens dawah. It is essential to speak with wisdom, good counsel and the best manner. A caller should present evidence clearly, avoid personal attacks, remain open to correction and honestly state what they do not know."
+      },
+      "author": { "bn": "দাওয়াহ বিভাগ", "en": "Dawah Department" },
+      "published": true,
+      "featured": false,
+      "publishedAt": "2026-11-10T12:00:00.000Z",
+      "viewCount": 142
+    },
+    {
+      "slug": "family-learning-plan",
+      "type": "blog",
+      "icon": "🏡",
+      "coverImage": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=82",
+      "category": { "bn": "জীবন ও পরিবার", "en": "Life & Family" },
+      "title": {
+        "bn": "পরিবারের সঙ্গে নিত্য ইসলামী শিক্ষার একটি সহজ পরিকল্পনা",
+        "en": "A Simple Islamic Learning Plan for Every Family"
+      },
+      "excerpt": {
+        "bn": "দিনে মাত্র দশ মিনিট কুরআন, হাদিস ও উত্তম চরিত্র শেখার কার্যকর পরিকল্পনা।",
+        "en": "A practical ten-minute daily plan for Quran, Hadith and good character."
+      },
+      "body": {
+        "bn": "প্রতিদিন নির্দিষ্ট সময়ে কুরআন থেকে একটি সংক্ষিপ্ত আয়াত পড়া, সহীহ হাদিসের সহজ ব্যাখ্যা শোনা এবং একটি করে সৎকর্ম সিদ্ধান্ত নেওয়া পরিবারের শিক্ষাকে স্বাভাবিক করে তোলে। ছোট ধারাবাহিকতা বড় পরিবর্তনের ভিত্তি তৈরি করতে পারে।",
+        "en": "Daily learning becomes natural when the family reads a short Quran verse, listens to a simple authentic Hadith explanation and chooses one good deed together. Small consistency can build lasting change."
+      },
+      "author": {
+        "bn": "শিক্ষা ও প্রশিক্ষণ দল",
+        "en": "Education & Training Team"
+      },
+      "published": true,
+      "featured": false,
+      "publishedAt": "2026-11-05T12:00:00.000Z",
+      "viewCount": 119
+    },
+    {
+      "slug": "iro-new-training-batch",
+      "type": "news",
+      "icon": "📢",
+      "coverImage": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=82",
+      "category": { "bn": "ঘোষণা", "en": "Announcement" },
+      "title": {
+        "bn": "নতুন দাওয়াহ ও নেতৃত্ব প্রশিক্ষণ ব্যাচ ঘোষণা",
+        "en": "New Dawah and Leadership Training Batch Announced"
+      },
+      "excerpt": {
+        "bn": "আগ্রহী অংশগ্রহণকারীদের জন্য নতুন তিন মাসের প্রশিক্ষণ ব্যাচের প্রস্তুতি চলছে।",
+        "en": "Preparation is underway for a new three-month training batch for interested participants."
+      },
+      "body": {
+        "bn": "ইসলামী আকিদা, দাওয়াহ পদ্ধতি, জনসংযোগ, লিখিত যোগাযোগ ও নেতৃত্ব বিষয়ক প্রশিক্ষণ নিয়ে আগামী ব্যাচের নিবন্ধন প্রস্তুত করা হচ্ছে। বিস্তারিত সময়সূচি ও আবেদন শর্ত খুব শিগগির প্রকাশ করা হবে।",
+        "en": "Registration preparations are underway for a new batch covering Islamic creed, dawah methods, public communication, writing and leadership. The detailed schedule and application conditions will be announced soon."
+      },
+      "author": { "bn": "IRO প্রশাসন", "en": "IRO Administration" },
+      "published": true,
+      "featured": true,
+      "publishedAt": "2026-11-22T12:00:00.000Z",
+      "viewCount": 331
+    },
+    {
+      "slug": "winter-clothing-relief-update",
+      "type": "news",
+      "icon": "🧣",
+      "coverImage": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1600&q=82",
+      "category": { "bn": "সমাজসেবা", "en": "Welfare" },
+      "title": {
+        "bn": "শীতকালীন সহায়তা কর্মসূচির প্রস্তুতি শুরু",
+        "en": "Preparations Begin for the Winter Assistance Programme"
+      },
+      "excerpt": {
+        "bn": "অসহায় পরিবার চিহ্নিতকরণ, স্বেচ্ছাসেবক দল এবং সহায়তা পরিকল্পনা শুরু হয়েছে।",
+        "en": "Family screening, volunteer teams and distribution planning have begun."
+      },
+      "body": {
+        "bn": "এ বছর কাহালগাঁওসহ আশপাশের এলাকায় সঠিক পরিবার চিহ্নিত করে শীতবস্ত্র বিতরণ কর্মসূচি এগিয়ে নেওয়া হবে। স্বেচ্ছাসেবকরা যাচাই, তালিকা ও বিতরণ দায়িত্ব ভাগ করে নেবেন।",
+        "en": "This year's winter clothing distribution will cover pre-screened families in Kahalgaon and nearby areas. Volunteers will share verification, list management and distribution responsibilities."
+      },
+      "author": { "bn": "সমাজসেবা বিভাগ", "en": "Welfare Department" },
+      "published": true,
+      "featured": false,
+      "publishedAt": "2026-11-18T12:00:00.000Z",
+      "viewCount": 205
+    },
+    {
+      "slug": "knowledge-contest-results",
+      "type": "news",
+      "icon": "🏆",
+      "coverImage": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1600&q=82",
+      "category": { "bn": "কার্যক্রম", "en": "Activity" },
+      "title": {
+        "bn": "জ্ঞান প্রতিযোগিতা সম্পন্ন: শিক্ষার্থীদের অংশগ্রহণে উৎসবের আমেজ",
+        "en": "Knowledge Contest Completed: A Celebration of Student Participation"
+      },
+      "excerpt": {
+        "bn": "দুই প্রতিষ্ঠানের শিক্ষার্থীরা কুরআন, হাদিস ও সাধারণ জ্ঞান নিয়ে প্রতিযোগিতায় অংশ নিয়েছে।",
+        "en": "Students from two institutions competed in Quran, Hadith and general knowledge rounds."
+      },
+      "body": {
+        "bn": "প্রতিযোগিতায় শিক্ষার্থীরা অংশগ্রহণ, প্রশ্নোত্তর এবং নৈতিক আচরণে উৎসাহ পেয়েছে। পুরস্কার ও সৌজন্য সম্মাননা দিয়ে অনুষ্ঠানের সমাপ্তি ঘোষণা করা হয়েছে।",
+        "en": "Students were encouraged to participate, answer carefully and demonstrate good conduct. The event concluded with prizes and recognition awards."
+      },
+      "author": { "bn": "প্রোগ্রাম টিম", "en": "Program Team" },
+      "published": true,
+      "featured": false,
+      "publishedAt": "2026-11-12T12:00:00.000Z",
+      "viewCount": 168
+    },
+    {
+      "slug": "tree-plantation-week",
+      "type": "news",
+      "icon": "🌱",
+      "coverImage": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1600&q=82",
+      "category": { "bn": "পরিবেশ", "en": "Environment" },
+      "title": {
+        "bn": "শিক্ষা প্রতিষ্ঠানে বৃক্ষরোপণ সপ্তাহ শুরু",
+        "en": "Tree Plantation Week Begins at Educational Institutions"
+      },
+      "excerpt": {
+        "bn": "স্বেচ্ছাসেবক, শিক্ষক ও শিক্ষার্থীরা বনজ, ফলজ ও ঔষধি গাছ লাগাচ্ছেন।",
+        "en": "Volunteers, teachers and students are planting timber, fruit and medicinal trees."
+      },
+      "body": {
+        "bn": "বৃক্ষরোপণ সপ্তাহে নির্বাচিত শিক্ষা প্রতিষ্ঠানে গাছের পরিচর্যা ও ভবিষ্যৎ সংরক্ষণ পরিকল্পনা নেওয়া হবে। প্রতিটি গাছ অংশগ্রহণকারীদের পরিবেশ সচেতনতার প্রতীক হিসেবে রক্ষা করা হবে।",
+        "en": "During the plantation week, selected institutions will receive care plans and a future maintenance schedule. Each tree will serve as a visible reminder of environmental responsibility."
+      },
+      "author": { "bn": "পরিবেশ কর্মসূচি", "en": "Environment Programme" },
+      "published": true,
+      "featured": false,
+      "publishedAt": "2026-11-08T12:00:00.000Z",
+      "viewCount": 96
+    }
+  ],
+  "donationMethods": [
+    {
+      "slug": "bkash-personal",
+      "region": "bangladesh",
+      "type": "mobile-banking",
+      "name": { "bn": "বিকাশ", "en": "bKash" },
+      "provider": "bKash",
+      "accountName": { "bn": "IRO", "en": "IRO" },
+      "accountNumber": "",
+      "instructions": {
+        "bn": "অ্যাডমিন ড্যাশবোর্ড থেকে অফিসিয়াল নম্বর যোগ করুন।",
+        "en": "Add the official number from the admin dashboard."
+      },
+      "checkoutUrl": "",
+      "currency": "BDT",
+      "enabled": false,
+      "order": 0
+    },
+    {
+      "slug": "nagad-personal",
+      "region": "bangladesh",
+      "type": "mobile-banking",
+      "name": { "bn": "নগদ", "en": "Nagad" },
+      "provider": "Nagad",
+      "accountName": { "bn": "IRO", "en": "IRO" },
+      "accountNumber": "",
+      "instructions": {
+        "bn": "অ্যাডমিন ড্যাশবোর্ড থেকে অফিসিয়াল নম্বর যোগ করুন।",
+        "en": "Add the official number from the admin dashboard."
+      },
+      "checkoutUrl": "",
+      "currency": "BDT",
+      "enabled": false,
+      "order": 1
+    },
+    {
+      "slug": "international-transfer",
+      "region": "abroad",
+      "type": "bank-transfer",
+      "name": {
+        "bn": "আন্তর্জাতিক ব্যাংক ট্রান্সফার",
+        "en": "International bank transfer"
+      },
+      "provider": "",
+      "accountName": { "bn": "IRO", "en": "IRO" },
+      "accountNumber": "",
+      "instructions": {
+        "bn": "অ্যাডমিন ড্যাশবোর্ড থেকে ব্যাংক তথ্য যোগ করুন।",
+        "en": "Add the bank details from the admin dashboard."
+      },
+      "checkoutUrl": "",
+      "currency": "USD",
+      "enabled": false,
+      "order": 2
+    }
+  ],
   "settings": [
     {
       "key": "site",
@@ -1138,6 +1391,10 @@
       "value": {
         "bn": [
           {
+            "href": "/",
+            "label": "হোম"
+          },
+          {
             "href": "/about",
             "label": "আমাদের সম্পর্কে"
           },
@@ -1154,11 +1411,23 @@
             "label": "ভবিষ্যৎ স্বপ্ন"
           },
           {
+            "href": "/blog",
+            "label": "ব্লগসমূহ"
+          },
+          {
+            "href": "/news",
+            "label": "সংবাদ"
+          },
+          {
             "href": "/contact",
             "label": "যোগাযোগ"
           }
         ],
         "en": [
+          {
+            "href": "/",
+            "label": "Home"
+          },
           {
             "href": "/about",
             "label": "About Us"
@@ -1174,6 +1443,14 @@
           {
             "href": "/roadmap",
             "label": "Our Future"
+          },
+          {
+            "href": "/blog",
+            "label": "Blogs"
+          },
+          {
+            "href": "/news",
+            "label": "News"
           },
           {
             "href": "/contact",
@@ -1271,27 +1548,27 @@
               {
                 "icon": "📍",
                 "label": "ঠিকানা",
-                "value": "............"
+                "value": "কাহালগাঁও, ফুলবাড়িয়া, ময়মনসিংহ"
               },
               {
                 "icon": "📞",
                 "label": "মোবাইল",
-                "value": "............"
+                "value": "০১৬০১-৯৯৬৩৯৯"
               },
               {
                 "icon": "📧",
                 "label": "ইমেইল",
-                "value": "............"
+                "value": "iroOfficial@gmail.com"
               },
               {
                 "icon": "📘",
                 "label": "ফেসবুক",
-                "value": "............"
+                "value": "https://www.facebook.com/IROmessage"
               },
               {
                 "icon": "▶",
                 "label": "ইউটিউব",
-                "value": "............"
+                "value": "https://www.youtube.com/@IROmessage"
               }
             ]
           },
@@ -1393,27 +1670,27 @@
               {
                 "icon": "📍",
                 "label": "Address",
-                "value": "............"
+                "value": "Kahalgaon, Fulbaria, Mymensingh"
               },
               {
                 "icon": "📞",
                 "label": "Phone",
-                "value": "............"
+                "value": "01601-996399"
               },
               {
                 "icon": "📧",
                 "label": "Email",
-                "value": "............"
+                "value": "iroOfficial@gmail.com"
               },
               {
                 "icon": "📘",
                 "label": "Facebook",
-                "value": "............"
+                "value": "https://www.facebook.com/IROmessage"
               },
               {
                 "icon": "▶",
                 "label": "YouTube",
-                "value": "............"
+                "value": "https://www.youtube.com/@IROmessage"
               }
             ]
           },

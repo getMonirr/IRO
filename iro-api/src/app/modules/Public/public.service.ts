@@ -1,16 +1,24 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { pickLang, TLang } from '../../shared/bilingual'
+import { DonationMethod } from '../Donation/donation.model'
 import { ListItem } from '../ListItem/listItem.model'
+import { Post } from '../Post/post.model'
 import { Program } from '../Program/program.model'
 import { Setting } from '../Setting/setting.model'
 
 /** Builds the whole public website content in the chosen language (same shape as the frontend's default dictionary). */
 const getPublicContentFromDB = async (lang: TLang) => {
-  const [programs, items, settings] = await Promise.all([
-    Program.find({ published: true }).sort({ order: 1 }).lean<any[]>(),
-    ListItem.find({ published: true }).sort({ order: 1 }).lean<any[]>(),
-    Setting.find().lean<any[]>(),
-  ])
+  const [programs, items, settings, posts, donationMethods] = await Promise.all(
+    [
+      Program.find({ published: true }).sort({ order: 1 }).lean<any[]>(),
+      ListItem.find({ published: true }).sort({ order: 1 }).lean<any[]>(),
+      Setting.find().lean<any[]>(),
+      Post.find({ published: true })
+        .sort({ featured: -1, publishedAt: -1 })
+        .lean<any[]>(),
+      DonationMethod.find({ enabled: true }).sort({ order: 1 }).lean<any[]>(),
+    ],
+  )
   const group = (g: string) => items.filter(i => i.group === g)
   const card = (i: any) => ({
     icon: i.icon,
@@ -58,6 +66,34 @@ const getPublicContentFromDB = async (lang: TLang) => {
       text: pickLang(i.text, lang),
     })),
     joinWays: group('joinWay').map(card),
+    posts: posts.map(p => ({
+      id: p.slug,
+      slug: p.slug,
+      type: p.type,
+      icon: p.icon,
+      coverImage: p.coverImage,
+      category: pickLang(p.category, lang),
+      title: pickLang(p.title, lang),
+      excerpt: pickLang(p.excerpt, lang),
+      body: pickLang(p.body, lang),
+      author: pickLang(p.author, lang),
+      featured: p.featured,
+      publishedAt: p.publishedAt,
+      viewCount: p.viewCount ?? 0,
+    })),
+    donationMethods: donationMethods.map(method => ({
+      id: String(method._id),
+      slug: method.slug,
+      region: method.region,
+      type: method.type,
+      name: pickLang(method.name, lang),
+      provider: method.provider,
+      accountName: pickLang(method.accountName, lang),
+      accountNumber: method.accountNumber,
+      instructions: pickLang(method.instructions, lang),
+      checkoutUrl: method.checkoutUrl,
+      currency: method.currency,
+    })),
   }
   for (const s of settings) {
     const v = s.value?.[lang] ?? s.value?.bn

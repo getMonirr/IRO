@@ -1,3 +1,4 @@
+import { FloatingActions } from "@/components/FloatingActions";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { locales, type Locale } from "@/i18n/config";
@@ -33,6 +34,7 @@ export default async function RootLayout({
         <Header locale={locale as Locale} t={t} />
         <main>{children}</main>
         <Footer locale={locale} t={t} />
+        <FloatingActions locale={locale} t={t} />
       </body>
     </html>
   );

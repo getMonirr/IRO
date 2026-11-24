@@ -14,7 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.seedContent = void 0;
 const config_1 = __importDefault(require("../config"));
+const donation_model_1 = require("../modules/Donation/donation.model");
 const listItem_model_1 = require("../modules/ListItem/listItem.model");
+const post_model_1 = require("../modules/Post/post.model");
 const program_model_1 = require("../modules/Program/program.model");
 const setting_model_1 = require("../modules/Setting/setting.model");
 const user_model_1 = require("../modules/User/user.model");
@@ -54,6 +56,8 @@ const seedContent = (...args_1) => __awaiter(void 0, [...args_1], void 0, functi
             program_model_1.Program.deleteMany({}),
             listItem_model_1.ListItem.deleteMany({}),
             setting_model_1.Setting.deleteMany({}),
+            post_model_1.Post.deleteMany({}),
+            donation_model_1.DonationMethod.deleteMany({}),
         ]);
         logger_1.default.warn('content collections cleared');
     }
@@ -63,6 +67,10 @@ const seedContent = (...args_1) => __awaiter(void 0, [...args_1], void 0, functi
         yield listItem_model_1.ListItem.insertMany(seed_data_json_1.default.items);
     if (!(yield setting_model_1.Setting.exists({})))
         yield setting_model_1.Setting.insertMany(seed_data_json_1.default.settings);
+    if (!(yield post_model_1.Post.exists({})))
+        yield post_model_1.Post.insertMany(seed_data_json_1.default.posts);
+    if (!(yield donation_model_1.DonationMethod.exists({})) && seed_data_json_1.default.donationMethods)
+        yield donation_model_1.DonationMethod.insertMany(seed_data_json_1.default.donationMethods);
 });
 exports.seedContent = seedContent;
 exports.default = seedSuperAdmin;

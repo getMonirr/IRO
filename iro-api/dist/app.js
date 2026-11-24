@@ -51,15 +51,14 @@ const cors_1 = __importDefault(require("cors"));
 const express_1 = __importDefault(require("express"));
 const helmet_1 = __importDefault(require("helmet"));
 const mongoose_1 = __importDefault(require("mongoose"));
-const config_1 = __importDefault(require("./app/config"));
+const config_1 = __importStar(require("./app/config"));
+const DB_1 = __importStar(require("./app/DB"));
 const globalErrorHandler_1 = __importDefault(require("./app/middlewares/globalErrorHandler"));
 const notFoundAPIHandler_1 = __importDefault(require("./app/middlewares/notFoundAPIHandler"));
 const rateLimit_1 = require("./app/middlewares/rateLimit");
 const requestLogger_1 = __importDefault(require("./app/middlewares/requestLogger"));
 const routes_1 = __importDefault(require("./app/routes"));
-const DB_1 = __importStar(require("./app/DB"));
 const logger_1 = __importDefault(require("./app/utils/logger"));
-const config_2 = require("./app/config");
 const app = (0, express_1.default)();
 app.disable('x-powered-by');
 let serverlessConnectionPromise;
@@ -67,11 +66,13 @@ let serverlessSeedPromise;
 if (process.env.VERCEL === '1') {
     app.use((req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
         try {
-            (0, config_2.assertConfig)();
+            (0, config_1.assertConfig)();
             if (mongoose_1.default.connection.readyState !== 1) {
                 if (!serverlessConnectionPromise) {
                     serverlessConnectionPromise = mongoose_1.default
-                        .connect(config_1.default.database_url, { serverSelectionTimeoutMS: 5000 })
+                        .connect(config_1.default.database_url, {
+                        serverSelectionTimeoutMS: 5000,
+                    })
                         .then(() => {
                         logger_1.default.info('MongoDB connected');
                     })

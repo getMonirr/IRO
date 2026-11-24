@@ -18,6 +18,12 @@ const logger = (0, pino_1.default)({
         ],
         censor: '[redacted]',
     },
-    // JSON stdout is compatible with Vercel, Docker, and local log collectors.
+    // production: JSON to stdout (Docker / log collectors) · development: pretty
+    transport: config_1.default.NODE_ENV === 'production'
+        ? undefined
+        : {
+            target: 'pino-pretty',
+            options: { colorize: true, translateTime: 'SYS:HH:MM:ss' },
+        },
 });
 exports.default = logger;

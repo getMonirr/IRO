@@ -59,7 +59,9 @@ const initializeDatabase = () => __awaiter(void 0, void 0, void 0, function* () 
         return;
     if (!connectionPromise) {
         connectionPromise = mongoose_1.default
-            .connect(config_1.default.database_url, { serverSelectionTimeoutMS: 5000 })
+            .connect(config_1.default.database_url, {
+            serverSelectionTimeoutMS: 5000,
+        })
             .then(() => {
             logger_1.default.info('MongoDB connected');
         })

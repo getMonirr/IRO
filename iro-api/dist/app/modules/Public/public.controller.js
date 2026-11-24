@@ -16,6 +16,7 @@ exports.PublicControllers = void 0;
 const http_status_1 = __importDefault(require("http-status"));
 const catchAsync_1 = __importDefault(require("../../utils/catchAsync"));
 const sendResponse_1 = __importDefault(require("../../utils/sendResponse"));
+const post_service_1 = require("../Post/post.service");
 const public_service_1 = require("./public.service");
 const getPublicContent = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const data = yield public_service_1.PublicServices.getPublicContentFromDB(req.query.lang);
@@ -27,4 +28,13 @@ const getPublicContent = (0, catchAsync_1.default)((req, res) => __awaiter(void 
         data,
     });
 }));
-exports.PublicControllers = { getPublicContent };
+const incrementPostView = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield post_service_1.PostServices.incrementPostViewBySlug(req.params.slug);
+    (0, sendResponse_1.default)(res, {
+        statusCode: http_status_1.default.OK,
+        success: true,
+        message: 'Post view recorded',
+        data: { viewCount: result.viewCount },
+    });
+}));
+exports.PublicControllers = { getPublicContent, incrementPostView };

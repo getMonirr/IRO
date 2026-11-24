@@ -1,5 +1,7 @@
 import config from '../config'
+import { DonationMethod } from '../modules/Donation/donation.model'
 import { ListItem } from '../modules/ListItem/listItem.model'
+import { Post } from '../modules/Post/post.model'
 import { Program } from '../modules/Program/program.model'
 import { Setting } from '../modules/Setting/setting.model'
 import { User } from '../modules/User/user.model'
@@ -46,12 +48,17 @@ export const seedContent = async (reset = false) => {
       Program.deleteMany({}),
       ListItem.deleteMany({}),
       Setting.deleteMany({}),
+      Post.deleteMany({}),
+      DonationMethod.deleteMany({}),
     ])
     logger.warn('content collections cleared')
   }
   if (!(await Program.exists({}))) await Program.insertMany(seedData.programs)
   if (!(await ListItem.exists({}))) await ListItem.insertMany(seedData.items)
   if (!(await Setting.exists({}))) await Setting.insertMany(seedData.settings)
+  if (!(await Post.exists({}))) await Post.insertMany(seedData.posts)
+  if (!(await DonationMethod.exists({})) && seedData.donationMethods)
+    await DonationMethod.insertMany(seedData.donationMethods)
 }
 
 export default seedSuperAdmin

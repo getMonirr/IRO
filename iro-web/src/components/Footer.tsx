@@ -15,7 +15,11 @@ export function Footer({ locale, t }: { locale: string; t: Dict }) {
           <p className="mt-4 text-sm opacity-80">{t.ui.footer.about}</p>
         </div>
         <ul className="space-y-1 text-sm">
-          {[...t.nav, { href: "/join", label: t.ui.header.join }].map((n) => (
+          {[
+            ...t.nav,
+            { href: "/donate", label: t.ui.header.donate },
+            { href: "/join", label: t.ui.header.join },
+          ].map((n) => (
             <li key={n.href}>
               <Link href={`/${locale}${n.href}`} className="hover:text-gold">
                 {n.label}
@@ -27,7 +31,7 @@ export function Footer({ locale, t }: { locale: string; t: Dict }) {
           <h2 className="font-display text-lg font-bold text-gold-soft">
             {t.ui.contact.title}
           </h2>
-          <dl className="mt-3 space-y-2 text-sm opacity-85">
+          <dl className="mt-3 space-y-2 text-sm text-cream">
             {t.ui.contact.items.map((item) => (
               <div key={item.label} className="flex gap-2">
                 <dt className="shrink-0" aria-label={item.label}>
@@ -38,7 +42,7 @@ export function Footer({ locale, t }: { locale: string; t: Dict }) {
                     value={item.value}
                     copyLabel={t.ui.contact.copy}
                     copiedLabel={t.ui.contact.copied}
-                    className="text-cream hover:text-gold-soft"
+                    className="text-cream! hover:text-gold-soft! [&_a]:text-cream [&_button]:text-gold-soft [&_button]:hover:text-cream"
                   />
                 </dd>
               </div>
