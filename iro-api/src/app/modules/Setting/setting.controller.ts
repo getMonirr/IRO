@@ -15,9 +15,10 @@ const getAllSettings = catchAsync(async (req, res) => {
 })
 
 const updateSetting = catchAsync(async (req, res) => {
+  const value = req.params.key === 'theme' ? req.body.value : req.body
   const result = await SettingServices.upsertSettingIntoDB(
     req.params.key,
-    req.body,
+    value,
   )
   await recordAudit(req, {
     action: 'update',

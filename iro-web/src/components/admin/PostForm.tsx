@@ -1,5 +1,14 @@
 "use client";
+import { Input } from "@/components/ui/input";
 
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { api } from "@/lib/admin/api";
 import { useFetch } from "@/lib/admin/hooks";
 import { emptyBi, toBi, type PostData, type PostRec } from "@/lib/admin/types";
@@ -82,17 +91,23 @@ export function PostForm({ initial }: { initial?: PostRec }) {
         </h2>
         <div className="grid gap-4 md:grid-cols-4">
           <Field label="Type">
-            <select
+            <Select
               value={d.type}
-              onChange={(e) => set("type", e.target.value as PostData["type"])}
-              className={inputCls}
+              onValueChange={(value) =>
+                value && set("type", value as PostData["type"])
+              }
             >
-              <option value="blog">Blog</option>
-              <option value="news">News</option>
-            </select>
+              <SelectTrigger className="w-full">
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="blog">Blog</SelectItem>
+                <SelectItem value="news">News</SelectItem>
+              </SelectContent>
+            </Select>
           </Field>
           <Field label="Slug (URL)" hint="e.g. islamic-research-news">
-            <input
+            <Input
               required
               value={d.slug}
               onChange={(e) => set("slug", e.target.value.toLowerCase())}
@@ -101,7 +116,7 @@ export function PostForm({ initial }: { initial?: PostRec }) {
             />
           </Field>
           <Field label="Publish date">
-            <input
+            <Input
               type="date"
               required
               value={d.publishedAt}
@@ -110,7 +125,7 @@ export function PostForm({ initial }: { initial?: PostRec }) {
             />
           </Field>
           <Field label="Icon or emoji">
-            <input
+            <Input
               value={d.icon}
               onChange={(e) => set("icon", e.target.value)}
               className={inputCls}
@@ -128,19 +143,17 @@ export function PostForm({ initial }: { initial?: PostRec }) {
         />
         <div className="flex flex-wrap gap-6 text-sm">
           <label className="flex items-center gap-2">
-            <input
-              type="checkbox"
+            <Checkbox
               checked={d.published}
-              onChange={(e) => set("published", e.target.checked)}
-            />{" "}
+              onCheckedChange={(checked) => set("published", checked === true)}
+            />
             Published
           </label>
           <label className="flex items-center gap-2">
-            <input
-              type="checkbox"
+            <Checkbox
               checked={d.featured}
-              onChange={(e) => set("featured", e.target.checked)}
-            />{" "}
+              onCheckedChange={(checked) => set("featured", checked === true)}
+            />
             Featured on homepage
           </label>
         </div>
@@ -156,7 +169,7 @@ export function PostForm({ initial }: { initial?: PostRec }) {
               key={lang}
               label={lang === "bn" ? "Category (Bangla)" : "Category (English)"}
             >
-              <input
+              <Input
                 list={`category-options-${lang}`}
                 value={d.category[lang]}
                 onChange={(event) =>
@@ -192,7 +205,7 @@ export function PostForm({ initial }: { initial?: PostRec }) {
               key={lang}
               label={lang === "bn" ? "Author (Bangla)" : "Author (English)"}
             >
-              <input
+              <Input
                 list={`author-options-${lang}`}
                 value={d.author[lang]}
                 onChange={(event) =>

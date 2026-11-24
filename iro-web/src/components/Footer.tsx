@@ -6,7 +6,7 @@ import { ContactValue } from "./ContactValue";
 
 export function Footer({ locale, t }: { locale: string; t: Dict }) {
   return (
-    <footer className="relative overflow-hidden bg-brand-dark text-cream">
+    <footer className="relative overflow-hidden bg-brand-dark text-primary-foreground">
       <Arabesque className="absolute inset-0 text-gold opacity-10" />
       <div className="relative mx-auto grid max-w-6xl gap-8 px-5 py-12 md:grid-cols-4">
         <div>
@@ -31,7 +31,7 @@ export function Footer({ locale, t }: { locale: string; t: Dict }) {
           <h2 className="font-display text-lg font-bold text-gold-soft">
             {t.ui.contact.title}
           </h2>
-          <dl className="mt-3 space-y-2 text-sm text-cream">
+          <dl className="mt-3 space-y-2 text-sm text-primary-foreground">
             {t.ui.contact.items.map((item) => (
               <div key={item.label} className="flex gap-2">
                 <dt className="shrink-0" aria-label={item.label}>
@@ -42,7 +42,7 @@ export function Footer({ locale, t }: { locale: string; t: Dict }) {
                     value={item.value}
                     copyLabel={t.ui.contact.copy}
                     copiedLabel={t.ui.contact.copied}
-                    className="text-cream! hover:text-gold-soft! [&_a]:text-cream [&_button]:text-gold-soft [&_button]:hover:text-cream"
+                    className="text-primary-foreground! hover:text-gold-soft! [&_a]:text-primary-foreground [&_button]:text-gold-soft [&_button]:hover:text-primary-foreground"
                   />
                 </dd>
               </div>

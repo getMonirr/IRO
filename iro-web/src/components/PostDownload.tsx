@@ -1,5 +1,7 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
 import { useState } from "react";
 
 export function PostDownload({
@@ -87,12 +89,8 @@ export function PostDownload({
   }
 
   return (
-    <button
-      type="button"
-      onClick={download}
-      disabled={busy}
-      className="rounded border border-gold/50 px-3 py-1.5 text-sm font-semibold text-gold-soft transition hover:bg-gold/10 disabled:opacity-50"
-    >
+    <Button type="button" onClick={download} disabled={busy} variant="outline">
+      <Download aria-hidden="true" />
       {busy
         ? locale === "bn"
           ? "তৈরি হচ্ছে…"
@@ -100,6 +98,6 @@ export function PostDownload({
         : locale === "bn"
           ? "PDF ডাউনলোড"
           : "Download PDF"}
-    </button>
+    </Button>
   );
 }

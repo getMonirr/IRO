@@ -1,6 +1,9 @@
 "use client";
+import { Input } from "@/components/ui/input";
 
+import { Button } from "@/components/ui/button";
 import { apiUpload } from "@/lib/admin/api";
+import { ImagePlus, LoaderCircle, Replace, Trash2 } from "lucide-react";
 import { useRef, useState } from "react";
 
 export function ImageUpload({
@@ -58,13 +61,15 @@ export function ImageUpload({
           <p className="text-xs text-ink/60">{hint}</p>
         </div>
         {value && (
-          <button
+          <Button
             type="button"
             onClick={() => onChange("")}
-            className="text-sm font-semibold text-red-700 hover:underline"
+            variant="destructive"
+            size="sm"
           >
+            <Trash2 aria-hidden="true" />
             Remove
-          </button>
+          </Button>
         )}
       </div>
 
@@ -75,42 +80,54 @@ export function ImageUpload({
             alt="Uploaded preview"
             className="aspect-video w-full object-cover"
           />
-          <button
+          <Button
             type="button"
             onClick={() => inputRef.current?.click()}
             disabled={busy}
-            className="w-full border-t border-gold/30 px-4 py-2 text-sm font-semibold text-brand hover:bg-white"
+            variant="ghost"
+            className="w-full rounded-none border-t"
           >
+            {busy ? (
+              <LoaderCircle className="animate-spin" aria-hidden="true" />
+            ) : (
+              <Replace aria-hidden="true" />
+            )}
             {busy ? "Uploading…" : "Replace image"}
-          </button>
+          </Button>
         </div>
       ) : (
-        <button
+        <Button
           type="button"
           onClick={() => inputRef.current?.click()}
           disabled={busy}
+          variant="outline"
           onDragOver={(event) => event.preventDefault()}
           onDrop={(event) => {
             event.preventDefault();
             void upload(event.dataTransfer.files[0]);
           }}
-          className="grid min-h-44 w-full place-items-center rounded-lg border-2 border-dashed border-gold/50 bg-sand/50 px-5 text-center transition hover:border-gold hover:bg-sand"
+          className="min-h-44 w-full flex-col whitespace-normal border-dashed px-5 text-center"
         >
           <span>
-            <span className="mb-2 block text-3xl" aria-hidden>
-              {busy ? "⏳" : "☁️"}
-            </span>
-            <span className="block font-semibold text-brand">
+            {busy ? (
+              <LoaderCircle
+                className="mx-auto mb-2 size-7 animate-spin"
+                aria-hidden="true"
+              />
+            ) : (
+              <ImagePlus className="mx-auto mb-2 size-7" aria-hidden="true" />
+            )}
+            <span className="block font-semibold">
               {busy ? "Uploading…" : "Choose or drop an image"}
             </span>
             <span className="mt-1 block text-xs text-ink/60">
               Stored securely in Cloudinary
             </span>
           </span>
-        </button>
+        </Button>
       )}
 
-      <input
+      <Input
         ref={inputRef}
         type="file"
         accept="image/jpeg,image/png,image/webp,image/gif"

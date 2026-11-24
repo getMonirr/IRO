@@ -36,7 +36,7 @@ export default async function ProgramPage({ params }: { params: Params }) {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-brand text-cream">
+      <section className="relative overflow-hidden bg-brand text-primary-foreground">
         <Arabesque className="pattern-unfold absolute inset-0 text-gold opacity-20 [mask-image:linear-gradient(to_left,black,transparent_80%)]" />
         <div className="relative mx-auto max-w-6xl px-5 py-12 md:py-20">
           <Link
@@ -65,7 +65,7 @@ export default async function ProgramPage({ params }: { params: Params }) {
               </p>
               <Link
                 href={`/${locale}/donate?program=${encodeURIComponent(p.id)}`}
-                className="mt-6 inline-flex rounded-full bg-brand px-6 py-2.5 font-semibold text-cream hover:bg-brand-dark"
+                className="mt-6 inline-flex rounded-full bg-brand px-6 py-2.5 font-semibold text-primary-foreground hover:bg-brand-dark"
               >
                 {t.ui.donation.button}
               </Link>
@@ -137,7 +137,7 @@ export default async function ProgramPage({ params }: { params: Params }) {
             <li key={o.id}>
               <Link
                 href={`/${locale}/programs/${o.id}`}
-                className="flex h-full items-center gap-3 border border-gold/40 bg-white px-4 py-3 transition hover:border-gold hover:bg-sand"
+                className="flex h-full items-center gap-3 border border-gold/40 bg-card px-4 py-3 transition hover:border-gold hover:bg-sand"
               >
                 <span className="text-2xl" aria-hidden>
                   {o.icon}
@@ -151,7 +151,7 @@ export default async function ProgramPage({ params }: { params: Params }) {
         </ul>
       </section>
 
-      <section className="relative overflow-hidden bg-brand-dark text-center text-cream">
+      <section className="relative overflow-hidden bg-brand-dark text-center text-primary-foreground">
         <Arabesque className="absolute inset-0 text-gold opacity-10" />
         <div className="relative mx-auto max-w-2xl px-5 py-14">
           <h2 className="font-display text-2xl font-bold md:text-3xl">

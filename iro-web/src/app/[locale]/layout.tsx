@@ -1,8 +1,10 @@
 import { FloatingActions } from "@/components/FloatingActions";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { locales, type Locale } from "@/i18n/config";
 import { getT, type Params } from "@/i18n/server";
+import { themeStyle } from "@/lib/theme";
 import type { Metadata } from "next";
 import "../globals.css";
 
@@ -27,14 +29,16 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: Params;
 }) {
-  const { locale, t } = await getT(params);
+  const { locale, t, theme } = await getT(params);
   return (
-    <html lang={locale}>
+    <html lang={locale} style={themeStyle(theme)}>
       <body>
-        <Header locale={locale as Locale} t={t} />
-        <main>{children}</main>
-        <Footer locale={locale} t={t} />
-        <FloatingActions locale={locale} t={t} />
+        <TooltipProvider>
+          <Header locale={locale as Locale} t={t} />
+          <main>{children}</main>
+          <Footer locale={locale} t={t} />
+          <FloatingActions locale={locale} t={t} />
+        </TooltipProvider>
       </body>
     </html>
   );

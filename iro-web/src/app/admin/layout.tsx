@@ -1,4 +1,7 @@
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/lib/admin/auth";
+import { fetchContent } from "@/lib/api";
+import { resolveTheme, themeStyle } from "@/lib/theme";
 import type { Metadata } from "next";
 // Next.js processes this global stylesheet; TypeScript has no declaration for CSS files.
 // @ts-ignore
@@ -9,15 +12,18 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function AdminRootLayout({
+export default async function AdminRootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const theme = resolveTheme((await fetchContent("en"))?.theme);
   return (
-    <html lang="en">
+    <html lang="en" style={themeStyle(theme)}>
       <body>
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          <TooltipProvider>{children}</TooltipProvider>
+        </AuthProvider>
       </body>
     </html>
   );

@@ -21,7 +21,7 @@ export default async function Departments({ params }: { params: Params }) {
         {t.departments.map((x) => (
           <li
             key={x}
-            className="border-l-4 border-gold bg-white px-5 py-4 font-display font-bold text-brand shadow-sm"
+            className="border-l-4 border-gold bg-card px-5 py-4 font-display font-bold text-brand shadow-sm"
           >
             {d.suffix.replace("{d}", x)}
           </li>

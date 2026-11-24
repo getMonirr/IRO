@@ -1,4 +1,5 @@
 "use client";
+import { TableRow } from "@/components/admin/ui";
 import Link from "next/link";
 import { Badge, Card, Empty, Loading, PageTitle, Table, Td } from "@/components/admin/ui";
 import { useAuth } from "@/lib/admin/auth";
@@ -40,11 +41,11 @@ export default function Overview() {
       {recent.loading ? <Loading /> : (
         <Table head={["Name", "Contact", "Type", "Status", "Received"]}>
           {recent.data?.length ? recent.data.map((r) => (
-            <tr key={r._id}>
+            <TableRow key={r._id}>
               <Td className="font-semibold">{r.name}</Td><Td>{r.contact}</Td><Td>{r.type}</Td>
               <Td><Badge tone={r.status === "new" ? "gold" : r.status === "closed" ? "gray" : "green"}>{r.status}</Badge></Td>
               <Td>{new Date(r.createdAt).toLocaleDateString()}</Td>
-            </tr>
+            </TableRow>
           )) : <Empty cols={5}>No requests yet.</Empty>}
         </Table>
       )}

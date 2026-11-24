@@ -1,5 +1,12 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 
 type Slide = { src: string; alt: string };
@@ -61,7 +68,7 @@ export function HeroCarousel({
         />
       ))}
       <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/25 to-black/35" />
-      <div className="absolute inset-x-5 top-5 rounded-sm border border-gold/70 bg-black/70 p-4 text-cream shadow-[0_4px_24px_rgba(0,0,0,0.85)] backdrop-blur-sm md:inset-x-8 md:top-8 md:p-5">
+      <div className="absolute inset-x-5 top-5 rounded-sm border border-gold/70 bg-black/70 p-4 text-primary-foreground shadow-[0_4px_24px_rgba(0,0,0,0.85)] backdrop-blur-sm md:inset-x-8 md:top-8 md:p-5">
         <p
           lang="ar"
           dir="rtl"
@@ -69,41 +76,57 @@ export function HeroCarousel({
         >
           {arabic}
         </p>
-        <p className="mt-2 border-t border-gold/50 pt-2 text-center text-sm leading-6 text-cream/95 drop-shadow-[0_2px_5px_rgba(0,0,0,1)] md:text-base">
+        <p className="mt-2 border-t border-gold/50 pt-2 text-center text-sm leading-6 text-primary-foreground/95 drop-shadow-[0_2px_5px_rgba(0,0,0,1)] md:text-base">
           {translation}
         </p>
         <p className="mt-1 text-center text-xs text-gold-soft drop-shadow-[0_2px_4px_rgba(0,0,0,1)]">
           {source}
         </p>
       </div>
-      <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 text-cream">
+      <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 text-primary-foreground">
         <p className="font-display text-lg font-semibold drop-shadow-[0_2px_5px_rgba(0,0,0,1)]">
           {slides[active].alt}
         </p>
         <div className="flex shrink-0 gap-2">
-          <button
-            type="button"
-            onClick={() => move(-1)}
-            aria-label={previousLabel}
-            className="grid h-9 w-9 place-items-center rounded-full border border-gold/70 text-lg hover:bg-gold hover:text-brand-dark"
-          >
-            &#8592;
-          </button>
-          <button
-            type="button"
-            onClick={() => move(1)}
-            aria-label={nextLabel}
-            className="grid h-9 w-9 place-items-center rounded-full border border-gold/70 text-lg hover:bg-gold hover:text-brand-dark"
-          >
-            &#8594;
-          </button>
+          <Tooltip>
+            <TooltipTrigger
+              render={
+                <Button
+                  type="button"
+                  onClick={() => move(-1)}
+                  aria-label={previousLabel}
+                  variant="outline"
+                  size="icon"
+                />
+              }
+            >
+              <ChevronLeft aria-hidden="true" />
+            </TooltipTrigger>
+            <TooltipContent>{previousLabel}</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger
+              render={
+                <Button
+                  type="button"
+                  onClick={() => move(1)}
+                  aria-label={nextLabel}
+                  variant="outline"
+                  size="icon"
+                />
+              }
+            >
+              <ChevronRight aria-hidden="true" />
+            </TooltipTrigger>
+            <TooltipContent>{nextLabel}</TooltipContent>
+          </Tooltip>
         </div>
       </div>
       <div className="absolute bottom-2 left-5 flex gap-1.5" aria-hidden>
         {slides.map((slide, index) => (
           <span
             key={slide.src}
-            className={`h-1 w-6 ${index === active ? "bg-gold" : "bg-cream/50"}`}
+            className={`h-1 w-6 ${index === active ? "bg-gold" : "bg-background/50"}`}
           />
         ))}
       </div>

@@ -1,17 +1,23 @@
 import type { Dict } from "./content/bn";
+import type { ThemeTokens } from "./theme";
 
 // ব্রাউজার থেকে (ফর্ম সাবমিট) ও সার্ভার থেকে (কন্টেন্ট ফেচ) আলাদা URL দেওয়া যায়
 const PUBLIC_URL = process.env.NEXT_PUBLIC_API_URL;
 const INTERNAL_URL = process.env.API_URL || PUBLIC_URL;
 
 /** ব্যাকএন্ড থেকে স্থানীয়কৃত কন্টেন্ট আনে। সার্ভার বন্ধ/ধীর/ভুল ডেটা হলে null (তখন ডিফল্ট ডেটা ব্যবহার হবে)। */
-export async function fetchContent(locale: string): Promise<Partial<Dict> | null> {
+export async function fetchContent(
+  locale: string,
+): Promise<(Partial<Dict> & { theme?: Partial<ThemeTokens> }) | null> {
   if (!INTERNAL_URL) return null;
   try {
-    const res = await fetch(`${INTERNAL_URL}/api/v1/public/content?lang=${locale}`, {
-      next: { revalidate: 60, tags: ["content"] },
-      signal: AbortSignal.timeout(4000),
-    });
+    const res = await fetch(
+      `${INTERNAL_URL}/api/v1/public/content?lang=${locale}`,
+      {
+        next: { revalidate: 60, tags: ["content"] },
+        signal: AbortSignal.timeout(4000),
+      },
+    );
     if (!res.ok) return null;
     const json = await res.json();
     return json && typeof json.data === "object" ? json.data : null;
@@ -28,6 +34,7 @@ export async function apiPost(path: string, data: unknown) {
     body: JSON.stringify(data),
   });
   const json = await res.json().catch(() => null);
-  if (!res.ok) throw new Error(json?.errorMessage ?? json?.message ?? "Request failed");
+  if (!res.ok)
+    throw new Error(json?.errorMessage ?? json?.message ?? "Request failed");
   return json;
 }

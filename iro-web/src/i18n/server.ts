@@ -1,6 +1,7 @@
 import { fetchContent } from "@/lib/api";
 import { bn, type Dict } from "@/lib/content/bn";
 import { en } from "@/lib/content/en";
+import { resolveTheme } from "@/lib/theme";
 import { notFound } from "next/navigation";
 import { isLocale } from "./config";
 
@@ -50,6 +51,7 @@ function mergeContent(fallback: Dict, api: Partial<Dict> | null): Dict {
 export async function getT(params: Promise<{ locale: string }>) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  const t = mergeContent(defaults[locale], await fetchContent(locale));
-  return { locale, t };
+  const content = await fetchContent(locale);
+  const t = mergeContent(defaults[locale], content);
+  return { locale, t, theme: resolveTheme(content?.theme) };
 }

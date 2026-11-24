@@ -1,4 +1,16 @@
 "use client";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 import { apiPost } from "@/lib/api";
 import type { Dict } from "@/lib/content/bn";
 import { useState } from "react";
@@ -32,51 +44,53 @@ export function JoinForm({
 
   if (state === "done")
     return (
-      <p className="box-motion rounded border border-gold bg-sand p-6">
-        {f.done}
-      </p>
+      <Card>
+        <CardContent className="p-5">{f.done}</CardContent>
+      </Card>
     );
 
-  const field =
-    "mt-1 w-full rounded border border-brand/30 bg-white px-3 py-2 focus:border-brand";
+  const field = "mt-1 w-full";
   return (
-    <form
-      onSubmit={onSubmit}
-      className="box-motion space-y-4 rounded border border-gold/60 bg-white p-6"
-    >
-      <label className="block text-sm font-semibold">
-        {f.name}
-        <input name="name" required className={field} />
-      </label>
-      <label className="block text-sm font-semibold">
-        {f.contact}
-        <input name="contact" required className={field} />
-      </label>
-      <label className="block text-sm font-semibold">
-        {f.type}
-        <select name="type" className={field}>
-          {f.types.map((x, i) => (
-            <option key={x} value={TYPE_KEYS[i]}>
-              {x}
-            </option>
-          ))}
-        </select>
-      </label>
-      <label className="block text-sm font-semibold">
-        {f.message}
-        <textarea name="message" rows={4} className={field} />
-      </label>
-      {state === "error" && (
-        <p role="alert" className="text-sm text-red-700">
-          {msg}
-        </p>
-      )}
-      <button
-        disabled={state === "sending"}
-        className="rounded-full bg-brand px-6 py-2 font-semibold text-cream hover:bg-brand-dark disabled:opacity-60"
-      >
-        {state === "sending" ? f.sending : f.send}
-      </button>
-    </form>
+    <Card>
+      <CardContent className="p-6">
+        <form onSubmit={onSubmit} className="space-y-4">
+          <Label className="block text-sm font-semibold">
+            {f.name}
+            <Input name="name" required className={field} />
+          </Label>
+          <Label className="block text-sm font-semibold">
+            {f.contact}
+            <Input name="contact" required className={field} />
+          </Label>
+          <Label className="block text-sm font-semibold">
+            {f.type}
+            <Select name="type" defaultValue={TYPE_KEYS[0]}>
+              <SelectTrigger className={field}>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {f.types.map((x, i) => (
+                  <SelectItem key={x} value={TYPE_KEYS[i]}>
+                    {x}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </Label>
+          <Label className="block text-sm font-semibold">
+            {f.message}
+            <Textarea name="message" rows={4} className={field} />
+          </Label>
+          {state === "error" && (
+            <p role="alert" className="text-sm text-red-700">
+              {msg}
+            </p>
+          )}
+          <Button disabled={state === "sending"} className="mt-2">
+            {state === "sending" ? f.sending : f.send}
+          </Button>
+        </form>
+      </CardContent>
+    </Card>
   );
 }

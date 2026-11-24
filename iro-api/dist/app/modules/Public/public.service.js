@@ -109,6 +109,10 @@ const getPublicContentFromDB = (lang) => __awaiter(void 0, void 0, void 0, funct
         })),
     };
     for (const s of settings) {
+        if (s.key === 'theme') {
+            out.theme = s.value;
+            continue;
+        }
         const v = (_b = (_a = s.value) === null || _a === void 0 ? void 0 : _a[lang]) !== null && _b !== void 0 ? _b : (_c = s.value) === null || _c === void 0 ? void 0 : _c.bn;
         if (v !== undefined)
             out[s.key] = v;

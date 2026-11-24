@@ -1,5 +1,8 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { Check, Copy, Share2 } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function PostEngagement({
@@ -55,31 +58,37 @@ export function PostEngagement({
           : `${count.toLocaleString("en-US")} views`}
       </span>
       <div className="flex items-center gap-2">
-        <span className="mr-1 text-gold-soft/80">
+        <span className="mr-1 text-muted-foreground">
           {locale === "bn" ? "শেয়ার" : "Share"}
         </span>
-        <button
+        <Button
           type="button"
           onClick={() => share("facebook")}
-          className="rounded border border-gold/60 px-3 py-1.5 font-semibold text-cream transition hover:bg-gold/15"
           aria-label="Share on Facebook"
+          variant="outline"
+          size="sm"
         >
+          <Share2 aria-hidden="true" />
           Facebook
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
           onClick={() => share("twitter")}
-          className="rounded border border-gold/60 px-3 py-1.5 font-semibold text-cream transition hover:bg-gold/15"
           aria-label="Share on X"
+          variant="outline"
+          size="sm"
         >
-          X
-        </button>
-        <button
+          <Share2 aria-hidden="true" />X
+        </Button>
+        <Separator orientation="vertical" className="h-5" />
+        <Button
           type="button"
           onClick={() => share("copy")}
-          className={`rounded border border-gold/60 px-3 py-1.5 font-semibold transition ${copied ? "scale-105 bg-gold text-brand-dark" : "text-cream hover:bg-gold/15"}`}
           aria-label="Copy link"
+          variant="outline"
+          size="sm"
         >
+          {copied ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
           {copied
             ? locale === "bn"
               ? "কপি হয়েছে ✓"
@@ -87,7 +96,7 @@ export function PostEngagement({
             : locale === "bn"
               ? "কপি"
               : "Copy"}
-        </button>
+        </Button>
       </div>
     </div>
   );

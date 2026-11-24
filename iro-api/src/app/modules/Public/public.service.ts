@@ -96,6 +96,10 @@ const getPublicContentFromDB = async (lang: TLang) => {
     })),
   }
   for (const s of settings) {
+    if (s.key === 'theme') {
+      out.theme = s.value
+      continue
+    }
     const v = s.value?.[lang] ?? s.value?.bn
     if (v !== undefined) out[s.key] = v
   }

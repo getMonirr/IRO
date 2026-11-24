@@ -1,4 +1,5 @@
 "use client";
+import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Btn, Card, Field, inputCls, Notice, PageTitle } from "@/components/admin/ui";
@@ -34,9 +35,9 @@ export default function AccountPage() {
         <h2 className="mb-4 font-display text-lg font-bold text-brand">Change password</h2>
         {error && <Notice>{error}</Notice>}
         <form onSubmit={onSubmit} className="space-y-4">
-          <Field label="Current password"><input name="currentPassword" type="password" required autoComplete="current-password" className={inputCls} /></Field>
-          <Field label="New password" hint="At least 10 characters with a letter and a digit. You will be signed out everywhere afterwards."><input name="newPassword" type="password" required autoComplete="new-password" className={inputCls} /></Field>
-          <Field label="Confirm new password"><input name="confirm" type="password" required autoComplete="new-password" className={inputCls} /></Field>
+          <Field label="Current password"><Input name="currentPassword" type="password" required autoComplete="current-password" className={inputCls} /></Field>
+          <Field label="New password" hint="At least 10 characters with a letter and a digit. You will be signed out everywhere afterwards."><Input name="newPassword" type="password" required autoComplete="new-password" className={inputCls} /></Field>
+          <Field label="Confirm new password"><Input name="confirm" type="password" required autoComplete="new-password" className={inputCls} /></Field>
           <Btn disabled={busy}>{busy ? "Updating…" : "Update password"}</Btn>
         </form>
       </Card>

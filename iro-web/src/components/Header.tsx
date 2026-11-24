@@ -1,6 +1,13 @@
 "use client";
+import { Button } from "@/components/ui/button";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import type { Locale } from "@/i18n/config";
 import type { Dict } from "@/lib/content/bn";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -24,7 +31,7 @@ export function Header({ locale, t }: { locale: Locale; t: Dict }) {
   ];
   const getHref = (href: string) => `/${locale}${href}`;
   return (
-    <header className="sticky top-0 z-50 h-20 border-b border-gold/30 bg-brand-dark text-cream xl:h-24">
+    <header className="sticky top-0 z-50 h-20 border-b border-gold/30 bg-brand-dark text-primary-foreground xl:h-24">
       <div className="flex h-full w-full items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link
           href={`/${locale}`}
@@ -61,41 +68,52 @@ export function Header({ locale, t }: { locale: Locale; t: Dict }) {
               {n.label}
             </Link>
           ))}
-          <Link
-            href={switchHref}
-            lang={other}
-            className="whitespace-nowrap rounded border border-gold/50 px-2.5 py-1 text-base hover:bg-gold/10"
+          <Button
+            render={<Link href={switchHref} lang={other} />}
+            variant="outline"
+            size="sm"
+            className="whitespace-nowrap"
           >
             {h.switchLabel}
-          </Link>
-          <Link
-            href={getHref("/donate")}
-            className="motion-sheen whitespace-nowrap rounded-full bg-brand px-4 py-1.5 text-base font-semibold text-cream hover:bg-brand-dark"
+          </Button>
+          <Button
+            render={<Link href={getHref("/donate")} />}
+            className="whitespace-nowrap"
           >
             {h.donate}
-          </Link>
-          <Link
-            href={getHref("/join")}
-            className="motion-sheen whitespace-nowrap rounded-full bg-gold px-4 py-1.5 text-base font-semibold text-brand-dark hover:bg-gold-soft"
+          </Button>
+          <Button
+            render={<Link href={getHref("/join")} />}
+            variant="secondary"
+            className="whitespace-nowrap"
           >
             {h.join}
-          </Link>
+          </Button>
         </nav>
         <div className="flex items-center gap-2 xl:hidden">
-          <Link
-            href={switchHref}
-            lang={other}
-            className="rounded border border-gold/50 px-2.5 py-1 text-sm"
+          <Button
+            render={<Link href={switchHref} lang={other} />}
+            variant="outline"
+            size="sm"
           >
             {h.switchLabel}
-          </Link>
-          <button
-            className="rounded border border-gold/50 px-3 py-1 text-sm"
-            aria-expanded={open}
-            onClick={() => setOpen(!open)}
-          >
-            {open ? h.close : h.menu}
-          </button>
+          </Button>
+          <Tooltip>
+            <TooltipTrigger
+              render={
+                <Button
+                  variant="outline"
+                  size="icon"
+                  aria-expanded={open}
+                  aria-label={open ? h.close : h.menu}
+                  onClick={() => setOpen(!open)}
+                />
+              }
+            >
+              {open ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+            </TooltipTrigger>
+            <TooltipContent>{open ? h.close : h.menu}</TooltipContent>
+          </Tooltip>
         </div>
       </div>
       {open && (

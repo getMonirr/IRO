@@ -1,2 +1,21 @@
-/** site: name/tagline · nav: menu labels · ui: every button/page text. value.bn and value.en hold a whole object each. */
-export const SETTING_KEYS = ['site', 'nav', 'ui'] as const
+/** Content keys store bilingual objects; theme stores validated CSS color tokens. */
+export const SETTING_KEYS = ['site', 'nav', 'ui', 'theme'] as const
+
+export const THEME_TOKEN_KEYS = [
+  'primary',
+  'primaryForeground',
+  'secondary',
+  'secondaryForeground',
+  'accent',
+  'accentForeground',
+  'background',
+  'foreground',
+  'muted',
+  'mutedForeground',
+  'card',
+  'cardForeground',
+  'destructive',
+  'destructiveForeground',
+  'border',
+  'ring',
+] as const

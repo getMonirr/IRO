@@ -1,26 +1,57 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { apiUpload } from "@/lib/admin/api";
 import type { Bi } from "@/lib/admin/types";
+import {
+  AlignCenter,
+  AlignLeft,
+  AlignRight,
+  Bold,
+  Heading2,
+  Heading3,
+  ImagePlus,
+  Italic,
+  Link2,
+  List,
+  ListOrdered,
+  Quote,
+  Redo2,
+  RemoveFormatting,
+  Strikethrough,
+  Underline,
+  Undo2,
+  type LucideIcon,
+} from "lucide-react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { inputCls } from "./ui";
 
-const tools: Array<{ label: string; command: string; text: string }> = [
-  { label: "Undo", command: "undo", text: "↶" },
-  { label: "Redo", command: "redo", text: "↷" },
-  { label: "Bold", command: "bold", text: "B" },
-  { label: "Italic", command: "italic", text: "I" },
-  { label: "Underline", command: "underline", text: "U" },
-  { label: "Strikethrough", command: "strikeThrough", text: "S" },
-  { label: "Heading", command: "formatBlock", text: "H2" },
-  { label: "Subheading", command: "formatBlock", text: "H3" },
-  { label: "Bulleted list", command: "insertUnorderedList", text: "•" },
-  { label: "Numbered list", command: "insertOrderedList", text: "1." },
-  { label: "Blockquote", command: "formatBlock", text: "❝" },
-  { label: "Clear formatting", command: "removeFormat", text: "Tx" },
-  { label: "Align left", command: "justifyLeft", text: "≡" },
-  { label: "Align center", command: "justifyCenter", text: "≡" },
-  { label: "Align right", command: "justifyRight", text: "≡" },
+const tools: Array<{ label: string; command: string; icon: LucideIcon }> = [
+  { label: "Undo", command: "undo", icon: Undo2 },
+  { label: "Redo", command: "redo", icon: Redo2 },
+  { label: "Bold", command: "bold", icon: Bold },
+  { label: "Italic", command: "italic", icon: Italic },
+  { label: "Underline", command: "underline", icon: Underline },
+  { label: "Strikethrough", command: "strikeThrough", icon: Strikethrough },
+  { label: "Heading", command: "formatBlock", icon: Heading2 },
+  { label: "Subheading", command: "formatBlock", icon: Heading3 },
+  { label: "Bulleted list", command: "insertUnorderedList", icon: List },
+  { label: "Numbered list", command: "insertOrderedList", icon: ListOrdered },
+  { label: "Blockquote", command: "formatBlock", icon: Quote },
+  {
+    label: "Clear formatting",
+    command: "removeFormat",
+    icon: RemoveFormatting,
+  },
+  { label: "Align left", command: "justifyLeft", icon: AlignLeft },
+  { label: "Align center", command: "justifyCenter", icon: AlignCenter },
+  { label: "Align right", command: "justifyRight", icon: AlignRight },
 ];
 
 export function RichTextEditor({
@@ -106,53 +137,80 @@ export function RichTextEditor({
       <div className="mt-1 grid gap-3 md:grid-cols-2">
         {(["bn", "en"] as const).map((lang) => (
           <div key={lang}>
-            <div className="flex flex-wrap gap-1 rounded-t border border-b-0 border-brand/25 bg-sand p-1">
+            <div className="flex flex-wrap items-center gap-1 rounded-t border border-b-0 border-input bg-muted p-1">
               {tools.map((tool) => (
-                <button
-                  key={`${lang}-${tool.label}`}
-                  type="button"
-                  title={tool.label}
-                  aria-label={tool.label}
-                  onMouseDown={(event) => event.preventDefault()}
-                  onClick={() => {
-                    editors.current[lang]?.focus();
-                    if (tool.label === "Heading")
-                      document.execCommand("formatBlock", false, "h2");
-                    else if (tool.label === "Subheading")
-                      document.execCommand("formatBlock", false, "h3");
-                    else if (tool.label === "Blockquote")
-                      document.execCommand("formatBlock", false, "blockquote");
-                    else run(lang, tool.command);
-                  }}
-                  className="grid h-8 min-w-8 place-items-center rounded px-2 text-sm font-bold text-brand hover:bg-white"
-                >
-                  {tool.text}
-                </button>
+                <Tooltip key={`${lang}-${tool.label}`}>
+                  <TooltipTrigger
+                    render={
+                      <Button
+                        type="button"
+                        aria-label={tool.label}
+                        variant="ghost"
+                        size="icon-sm"
+                        onMouseDown={(event) => event.preventDefault()}
+                        onClick={() => {
+                          editors.current[lang]?.focus();
+                          if (tool.label === "Heading")
+                            document.execCommand("formatBlock", false, "h2");
+                          else if (tool.label === "Subheading")
+                            document.execCommand("formatBlock", false, "h3");
+                          else if (tool.label === "Blockquote")
+                            document.execCommand(
+                              "formatBlock",
+                              false,
+                              "blockquote",
+                            );
+                          else run(lang, tool.command);
+                        }}
+                      />
+                    }
+                  >
+                    <tool.icon aria-hidden="true" />
+                  </TooltipTrigger>
+                  <TooltipContent>{tool.label}</TooltipContent>
+                </Tooltip>
               ))}
-              <button
-                type="button"
-                title="Image"
-                aria-label="Image"
-                disabled={uploading}
-                onMouseDown={(event) => event.preventDefault()}
-                onClick={() => {
-                  setImageLang(lang);
-                  imageInput.current?.click();
-                }}
-                className="h-8 rounded px-2 text-sm font-bold text-brand hover:bg-white disabled:opacity-50"
-              >
-                {uploading ? "…" : "IMG"}
-              </button>
-              <button
-                type="button"
-                title="Link"
-                aria-label="Link"
-                onMouseDown={(event) => event.preventDefault()}
-                onClick={() => addLink(lang)}
-                className="h-8 rounded px-2 text-sm font-bold text-brand hover:bg-white"
-              >
-                ↗
-              </button>
+              <Separator orientation="vertical" className="mx-1 h-5" />
+              <Tooltip>
+                <TooltipTrigger
+                  render={
+                    <Button
+                      type="button"
+                      aria-label="Insert image"
+                      variant="ghost"
+                      size="icon-sm"
+                      disabled={uploading}
+                      onMouseDown={(event) => event.preventDefault()}
+                      onClick={() => {
+                        setImageLang(lang);
+                        imageInput.current?.click();
+                      }}
+                    />
+                  }
+                >
+                  <ImagePlus aria-hidden="true" />
+                </TooltipTrigger>
+                <TooltipContent>
+                  {uploading ? "Uploading image" : "Insert image"}
+                </TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger
+                  render={
+                    <Button
+                      type="button"
+                      aria-label="Insert link"
+                      variant="ghost"
+                      size="icon-sm"
+                      onMouseDown={(event) => event.preventDefault()}
+                      onClick={() => addLink(lang)}
+                    />
+                  }
+                >
+                  <Link2 aria-hidden="true" />
+                </TooltipTrigger>
+                <TooltipContent>Insert link</TooltipContent>
+              </Tooltip>
             </div>
             <div
               ref={(node) => {

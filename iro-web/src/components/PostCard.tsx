@@ -1,3 +1,4 @@
+import { Card, CardContent } from "@/components/ui/card";
 import type { PublicPost } from "@/lib/content/bn";
 import Link from "next/link";
 
@@ -23,8 +24,8 @@ export function PostCard({
 }) {
   const base = post.type === "news" ? "news" : "blog";
   return (
-    <article
-      className={`box-motion motion-sheen group overflow-hidden rounded-lg border border-gold/30 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl ${featured ? "md:grid md:grid-cols-[1.15fr_1fr]" : "flex h-full flex-col"}`}
+    <Card
+      className={`group overflow-hidden transition-shadow hover:shadow-md ${featured ? "md:grid md:grid-cols-[1.15fr_1fr]" : "flex h-full flex-col"}`}
     >
       <Link
         href={`/${locale}/${base}/${post.slug}`}
@@ -45,14 +46,14 @@ export function PostCard({
               className="absolute inset-0 opacity-10"
               style={{
                 backgroundImage:
-                  "radial-gradient(circle at 2px 2px, #e8d9ae 1px, transparent 0)",
+                  "radial-gradient(circle at 2px 2px, var(--accent) 1px, transparent 0)",
                 backgroundSize: "18px 18px",
               }}
             />
           </div>
         )}
       </Link>
-      <div className="flex flex-1 flex-col p-5 md:p-6">
+      <CardContent className="flex flex-1 flex-col p-5 md:p-6">
         <div className="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-wide text-brand">
           {post.category && (
             <span className="rounded-full bg-sand px-3 py-1">
@@ -87,7 +88,7 @@ export function PostCard({
             {formatDate(post.publishedAt, locale)}
           </time>
         </div>
-      </div>
-    </article>
+      </CardContent>
+    </Card>
   );
 }

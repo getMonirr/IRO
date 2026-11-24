@@ -5,10 +5,7 @@ import { TSetting } from './setting.interface'
 const settingSchema = new Schema<TSetting>(
   {
     key: { type: String, enum: SETTING_KEYS, required: true, unique: true },
-    value: {
-      bn: { type: Schema.Types.Mixed, default: {} },
-      en: { type: Schema.Types.Mixed, default: {} },
-    },
+    value: { type: Schema.Types.Mixed, default: {} },
   },
   { timestamps: true, minimize: false },
 )

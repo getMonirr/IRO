@@ -18,7 +18,7 @@ export default async function Home({ params }: { params: Params }) {
     t.nav.find((item) => item.href === href)?.label ?? "";
   return (
     <>
-      <section className="relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden bg-brand text-cream xl:min-h-[calc(100svh-6rem)]">
+      <section className="relative flex min-h-[calc(100svh-5rem)] flex-col overflow-hidden bg-brand text-primary-foreground xl:min-h-[calc(100svh-6rem)]">
         <Arabesque className="pattern-unfold absolute inset-0 text-gold opacity-25 mask-[linear-gradient(to_left,black,transparent_75%)]" />
         <div className="relative mx-auto grid w-full flex-1 items-center gap-10 px-5 pb-24 pt-12 md:max-w-6xl md:grid-cols-[1.2fr_1fr] md:gap-14 md:py-16">
           <div className="hero-copy">
@@ -139,7 +139,7 @@ export default async function Home({ params }: { params: Params }) {
             {t.departments.map((department) => (
               <li
                 key={department}
-                className="box-motion group border-l-4 border-gold bg-cream px-4 py-4 font-display font-bold text-brand shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand hover:bg-brand hover:text-cream hover:shadow-lg"
+                className="box-motion group border-l-4 border-gold bg-background px-4 py-4 font-display font-bold text-brand shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand hover:bg-brand hover:text-primary-foreground hover:shadow-lg"
               >
                 {t.ui.departments.suffix.replace("{d}", department)}
               </li>
@@ -184,7 +184,7 @@ export default async function Home({ params }: { params: Params }) {
           {t.roadmap.map((item) => (
             <li key={item.title} className="group relative pb-8 last:pb-0">
               <span
-                className="absolute -left-10.25 top-1 h-5 w-5 rotate-45 border-2 border-gold bg-cream transition duration-300 group-hover:rotate-90 group-hover:bg-gold"
+                className="absolute -left-10.25 top-1 h-5 w-5 rotate-45 border-2 border-gold bg-background transition duration-300 group-hover:rotate-90 group-hover:bg-gold"
                 aria-hidden
               />
               <h3 className="font-display text-xl font-bold text-brand transition group-hover:translate-x-2">
@@ -277,7 +277,7 @@ export default async function Home({ params }: { params: Params }) {
           </div>
           <Link
             href={`/${locale}/join`}
-            className="mt-5 inline-block rounded-full bg-brand px-8 py-2.5 font-semibold text-cream hover:bg-brand-dark"
+            className="mt-5 inline-block rounded-full bg-brand px-8 py-2.5 font-semibold text-primary-foreground hover:bg-brand-dark"
           >
             {h.joinBtn}
           </Link>

@@ -35,7 +35,7 @@ export default async function BlogDetail({ params }: { params: Params }) {
   return (
     <>
       <article>
-        <header className="relative overflow-hidden bg-brand-dark text-cream">
+        <header className="relative overflow-hidden bg-brand-dark text-primary-foreground">
           <Arabesque className="absolute inset-0 text-gold opacity-10" />
           <div className="relative mx-auto max-w-4xl px-5 py-14 md:py-20">
             <Link
@@ -57,7 +57,7 @@ export default async function BlogDetail({ params }: { params: Params }) {
                 {post.excerpt}
               </p>
             )}
-            <p className="mt-6 text-sm text-cream/70">
+            <p className="mt-6 text-sm text-primary-foreground/70">
               {post.author}
               {post.category ? ` · ${post.category}` : ""}
               {post.publishedAt
@@ -103,7 +103,7 @@ export default async function BlogDetail({ params }: { params: Params }) {
                 <Link
                   key={item.id}
                   href={`/${locale}/blog/${item.slug}`}
-                  className="group overflow-hidden rounded-lg border border-gold/30 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+                  className="group overflow-hidden rounded-lg border border-gold/30 bg-card shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                 >
                   {item.coverImage && (
                     <img

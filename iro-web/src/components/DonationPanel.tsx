@@ -1,7 +1,11 @@
 "use client";
 
 import { Reveal } from "@/components/Reveal";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import type { PublicDonationMethod } from "@/lib/content/bn";
+import { Copy, ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 type Brand = { mark: string; color: string };
@@ -60,73 +64,83 @@ export function DonationPanel({
         {orderedMethods.map((method) => {
           const brand = getBrand(method);
           return (
-            <article
+            <Card
               key={method.id}
-              className="box-motion border border-gold/40 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+              className="h-full transition-shadow hover:shadow-md"
             >
-              <div className="flex items-start justify-between gap-3">
-                <div className="flex min-w-0 items-start gap-3">
-                  <span
-                    aria-label={method.name}
-                    className="grid h-12 min-w-12 place-items-center rounded-lg px-2 text-xs font-black text-white shadow-sm"
-                    style={{ backgroundColor: brand.color }}
-                  >
-                    {brand.mark}
-                  </span>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">
-                      {method.region === "bangladesh"
-                        ? labels.bangladesh
-                        : labels.abroad}
-                    </p>
-                    <h3 className="mt-1 font-display text-xl font-bold text-brand">
-                      {method.name}
-                    </h3>
-                    {method.provider && (
-                      <p className="text-sm text-ink/65">{method.provider}</p>
-                    )}
+              <CardContent className="h-full p-5">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex min-w-0 items-start gap-3">
+                    <span
+                      aria-label={method.name}
+                      className="grid h-12 min-w-12 place-items-center rounded-lg px-2 text-xs font-black text-white shadow-sm"
+                      style={{ backgroundColor: brand.color }}
+                    >
+                      {brand.mark}
+                    </span>
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-gold">
+                        {method.region === "bangladesh"
+                          ? labels.bangladesh
+                          : labels.abroad}
+                      </p>
+                      <h3 className="mt-1 font-display text-xl font-bold text-brand">
+                        {method.name}
+                      </h3>
+                      {method.provider && (
+                        <p className="text-sm text-ink/65">{method.provider}</p>
+                      )}
+                    </div>
                   </div>
+                  <span className="rounded-full bg-sand px-2 py-1 text-xs font-semibold text-brand">
+                    {method.currency}
+                  </span>
                 </div>
-                <span className="rounded-full bg-sand px-2 py-1 text-xs font-semibold text-brand">
-                  {method.currency}
-                </span>
-              </div>
-              {method.accountName && (
-                <p className="mt-4 text-sm">
-                  <strong>{labels.accountName}:</strong> {method.accountName}
-                </p>
-              )}
-              {method.accountNumber && (
-                <div className="mt-2 flex items-center justify-between gap-3 text-sm">
-                  <p className="break-all">
-                    <strong>{labels.accountNumber}:</strong>{" "}
-                    {method.accountNumber}
+                {method.accountName && (
+                  <p className="mt-4 text-sm">
+                    <strong>{labels.accountName}:</strong> {method.accountName}
                   </p>
-                  <button
-                    type="button"
-                    onClick={() => copy(method.id, method.accountNumber)}
-                    className="shrink-0 border-b border-gold text-xs font-semibold text-brand"
+                )}
+                {method.accountNumber && (
+                  <div className="mt-2 flex items-center justify-between gap-3 text-sm">
+                    <p className="break-all">
+                      <strong>{labels.accountNumber}:</strong>{" "}
+                      {method.accountNumber}
+                    </p>
+                    <Button
+                      type="button"
+                      onClick={() => copy(method.id, method.accountNumber)}
+                      variant="ghost"
+                      size="sm"
+                      className="shrink-0"
+                    >
+                      <Copy aria-hidden="true" />
+                      {copiedMethod === method.id ? "Copied" : "Copy"}
+                    </Button>
+                  </div>
+                )}
+                {method.instructions && (
+                  <p className="mt-3 text-sm leading-6 text-ink/75">
+                    <strong>{labels.instructions}:</strong>{" "}
+                    {method.instructions}
+                  </p>
+                )}
+                {method.checkoutUrl && (
+                  <Button
+                    render={
+                      <Link
+                        href={method.checkoutUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                      />
+                    }
+                    className="mt-4"
                   >
-                    {copiedMethod === method.id ? "Copied" : "Copy"}
-                  </button>
-                </div>
-              )}
-              {method.instructions && (
-                <p className="mt-3 text-sm leading-6 text-ink/75">
-                  <strong>{labels.instructions}:</strong> {method.instructions}
-                </p>
-              )}
-              {method.checkoutUrl && (
-                <a
-                  href={method.checkoutUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-4 inline-block rounded-full bg-brand px-4 py-2 text-sm font-semibold text-cream hover:bg-brand-dark"
-                >
-                  {labels.proceed} <span aria-hidden>→</span>
-                </a>
-              )}
-            </article>
+                    {labels.proceed} <ExternalLink aria-hidden="true" />
+                  </Button>
+                )}
+              </CardContent>
+            </Card>
           );
         })}
       </Reveal>

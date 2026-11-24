@@ -1,4 +1,14 @@
 "use client";
+import { TableRow } from "@/components/admin/ui";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 import {
   Badge,
@@ -61,7 +71,7 @@ export default function PostsPage() {
       {msg && <Notice tone={msg.tone}>{msg.text}</Notice>}
       {error && <Notice>{error}</Notice>}
       <div className="mb-4 flex flex-wrap gap-3">
-        <input
+        <Input
           placeholder="Search title or slug…"
           value={q}
           onChange={(e) => {
@@ -70,18 +80,22 @@ export default function PostsPage() {
           }}
           className={inputCls + " max-w-xs"}
         />
-        <select
-          value={type}
-          onChange={(e) => {
-            setType(e.target.value);
+        <Select
+          value={type || "all"}
+          onValueChange={(value) => {
+            setType(value === "all" || !value ? "" : value);
             setPage(1);
           }}
-          className={inputCls + " max-w-40"}
         >
-          <option value="">All types</option>
-          <option value="blog">Blog</option>
-          <option value="news">News</option>
-        </select>
+          <SelectTrigger className="w-40">
+            <SelectValue placeholder="All types" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">All types</SelectItem>
+            <SelectItem value="blog">Blog</SelectItem>
+            <SelectItem value="news">News</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
       {loading && !data ? (
         <Loading />
@@ -89,7 +103,7 @@ export default function PostsPage() {
         <Table head={["Date", "Post", "Type", "Featured", "Visible", ""]}>
           {data?.length ? (
             data.map((post) => (
-              <tr key={post._id}>
+              <TableRow key={post._id}>
                 <Td className="whitespace-nowrap text-xs">
                   {post.publishedAt
                     ? new Date(post.publishedAt).toLocaleDateString()
@@ -132,15 +146,16 @@ export default function PostsPage() {
                     Edit
                   </Link>
                   {user && isAdmin(user.role) && (
-                    <button
+                    <Button
                       onClick={() => remove(post)}
-                      className="font-semibold text-red-700 hover:underline"
+                      variant="destructive"
+                      size="sm"
                     >
                       Delete
-                    </button>
+                    </Button>
                   )}
                 </Td>
-              </tr>
+              </TableRow>
             ))
           ) : (
             <Empty cols={6} />

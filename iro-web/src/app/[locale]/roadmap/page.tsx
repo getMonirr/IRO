@@ -15,7 +15,7 @@ export default async function Roadmap({ params }: { params: Params }) {
       <ol className="relative mx-auto my-16 ml-5 max-w-3xl border-l-2 border-gold px-5 md:mx-auto">
         {t.roadmap.map((r) => (
           <li key={r.title} className="relative pb-10 pl-8 last:pb-0">
-            <span className="absolute -left-[11px] top-2 h-5 w-5 rotate-45 border-2 border-gold bg-cream" aria-hidden />
+            <span className="absolute -left-[11px] top-2 h-5 w-5 rotate-45 border-2 border-gold bg-background" aria-hidden />
             <h2 className="font-display text-xl font-bold text-brand">{r.title}</h2>
             <p className="mt-1 text-ink/80">{r.text}</p>
           </li>

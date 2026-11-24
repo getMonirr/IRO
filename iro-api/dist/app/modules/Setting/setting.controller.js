@@ -28,7 +28,8 @@ const getAllSettings = (0, catchAsync_1.default)((req, res) => __awaiter(void 0,
     });
 }));
 const updateSetting = (0, catchAsync_1.default)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield setting_service_1.SettingServices.upsertSettingIntoDB(req.params.key, req.body);
+    const value = req.params.key === 'theme' ? req.body.value : req.body;
+    const result = yield setting_service_1.SettingServices.upsertSettingIntoDB(req.params.key, value);
     yield (0, auditLog_utils_1.recordAudit)(req, {
         action: 'update',
         resource: 'setting',

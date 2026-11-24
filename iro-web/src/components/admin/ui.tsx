@@ -1,10 +1,29 @@
 "use client";
+import { Badge as ShadcnBadge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { CardContent, Card as ShadcnCard } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Table as ShadcnTable,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { Textarea } from "@/components/ui/textarea";
 import type { Meta } from "@/lib/admin/api";
 import type { Bi } from "@/lib/admin/types";
-import { useEffect, type ReactNode } from "react";
+import { type ReactNode } from "react";
 
-export const inputCls =
-  "w-full rounded border border-brand/25 bg-white px-3 py-2 text-sm leading-normal focus:border-brand disabled:bg-sand/60";
+export const inputCls = "w-full";
 
 export function Btn({
   variant = "primary",
@@ -14,14 +33,15 @@ export function Btn({
   variant?: "primary" | "ghost" | "danger";
 }) {
   const v = {
-    primary: "bg-brand text-cream hover:bg-brand-dark",
-    ghost: "border border-brand/30 text-brand hover:bg-sand",
-    danger: "border border-red-300 text-red-700 hover:bg-red-50",
+    primary: { variant: "default" as const, className: "hover:bg-brand-dark" },
+    ghost: { variant: "outline" as const, className: "text-primary" },
+    danger: { variant: "destructive" as const, className: "" },
   }[variant];
   return (
-    <button
+    <Button
       {...p}
-      className={`rounded px-4 py-2 text-sm font-semibold transition disabled:opacity-50 ${v} ${className}`}
+      variant={v.variant}
+      className={`${v.className} ${className}`}
     />
   );
 }
@@ -36,11 +56,13 @@ export function Field({
   children: ReactNode;
 }) {
   return (
-    <label className="block text-sm">
-      <span className="font-semibold text-brand">{label}</span>
+    <Label className="block text-sm">
+      <span className="font-semibold text-foreground">{label}</span>
       <div className="mt-1">{children}</div>
-      {hint && <span className="mt-1 block text-xs text-ink/60">{hint}</span>}
-    </label>
+      {hint && (
+        <span className="mt-1 block text-xs text-muted-foreground">{hint}</span>
+      )}
+    </Label>
   );
 }
 
@@ -60,28 +82,39 @@ export function BiField({
   rows?: number;
   hint?: string;
 }) {
-  const Tag = multiline ? "textarea" : "input";
   return (
     <div className="text-sm">
-      <span className="font-semibold text-brand">{label}</span>
+      <Label className="font-semibold text-foreground">{label}</Label>
       <div className="mt-1 grid gap-2 md:grid-cols-2">
         {(["bn", "en"] as const).map((l) => (
           <div key={l} className="relative">
-            <Tag
-              className={inputCls + " pt-5"}
-              rows={multiline ? rows : undefined}
-              value={value[l]}
-              lang={l}
-              onChange={(e) => onChange({ ...value, [l]: e.target.value })}
-              aria-label={`${label} (${l === "bn" ? "Bangla" : "English"})`}
-            />
+            {multiline ? (
+              <Textarea
+                className={inputCls + " pt-5"}
+                rows={rows}
+                value={value[l]}
+                lang={l}
+                onChange={(e) => onChange({ ...value, [l]: e.target.value })}
+                aria-label={`${label} (${l === "bn" ? "Bangla" : "English"})`}
+              />
+            ) : (
+              <Input
+                className={inputCls + " pt-5"}
+                value={value[l]}
+                lang={l}
+                onChange={(e) => onChange({ ...value, [l]: e.target.value })}
+                aria-label={`${label} (${l === "bn" ? "Bangla" : "English"})`}
+              />
+            )}
             <span className="pointer-events-none absolute left-3 top-1 text-[10px] font-semibold uppercase tracking-wide text-gold">
               {l === "bn" ? "বাংলা" : "English"}
             </span>
           </div>
         ))}
       </div>
-      {hint && <span className="mt-1 block text-xs text-ink/60">{hint}</span>}
+      {hint && (
+        <span className="mt-1 block text-xs text-muted-foreground">{hint}</span>
+      )}
     </div>
   );
 }
@@ -93,11 +126,9 @@ export const Card = ({
   children: ReactNode;
   className?: string;
 }) => (
-  <div
-    className={`box-motion rounded-lg border border-gold/30 bg-white p-5 shadow-sm ${className}`}
-  >
-    {children}
-  </div>
+  <ShadcnCard className={className}>
+    <CardContent className="pt-4">{children}</CardContent>
+  </ShadcnCard>
 );
 
 export const PageTitle = ({
@@ -111,8 +142,8 @@ export const PageTitle = ({
 }) => (
   <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
     <div>
-      <h1 className="font-display text-2xl font-bold text-brand">{title}</h1>
-      {sub && <p className="text-sm text-ink/70">{sub}</p>}
+      <h1 className="text-2xl font-bold text-foreground">{title}</h1>
+      {sub && <p className="text-sm text-muted-foreground">{sub}</p>}
     </div>
     {action}
   </div>
@@ -125,17 +156,19 @@ export function Notice({
   tone?: "error" | "success" | "info";
   children: ReactNode;
 }) {
-  const c = {
-    error: "border-red-300 bg-red-50 text-red-800",
-    success: "border-green-300 bg-green-50 text-green-800",
-    info: "border-gold bg-sand text-ink",
-  }[tone];
+  const variant = {
+    error: "destructive",
+    success: "secondary",
+    info: "outline",
+  }[tone] as "destructive" | "secondary" | "outline";
   return (
-    <div
-      role={tone === "error" ? "alert" : "status"}
-      className={`mb-4 rounded border px-4 py-2 text-sm ${c}`}
-    >
-      {children}
+    <div role={tone === "error" ? "alert" : "status"} className="mb-4">
+      <ShadcnBadge
+        variant={variant}
+        className="h-auto whitespace-normal px-3 py-2 text-left"
+      >
+        {children}
+      </ShadcnBadge>
     </div>
   );
 }
@@ -147,24 +180,20 @@ export function Badge({
   tone?: "gray" | "green" | "gold" | "red";
   children: ReactNode;
 }) {
-  const c = {
-    gray: "bg-sand text-ink/70",
-    green: "bg-green-100 text-green-800",
-    gold: "bg-gold-soft text-brand-dark",
-    red: "bg-red-100 text-red-800",
-  }[tone];
-  return (
-    <span
-      className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold ${c}`}
-    >
-      {children}
-    </span>
-  );
+  const variant = (
+    {
+      gray: "outline",
+      green: "default",
+      gold: "secondary",
+      red: "destructive",
+    } as const
+  )[tone];
+  return <ShadcnBadge variant={variant}>{children}</ShadcnBadge>;
 }
 
 export const Loading = ({ full }: { full?: boolean }) => (
   <div
-    className={`grid place-items-center text-sm text-ink/60 ${full ? "min-h-screen" : "py-10"}`}
+    className={`grid place-items-center text-sm text-muted-foreground ${full ? "min-h-screen" : "py-10"}`}
   >
     Loading…
   </div>
@@ -183,38 +212,15 @@ export function Modal({
   children: ReactNode;
   wide?: boolean;
 }) {
-  useEffect(() => {
-    if (!open) return;
-    const h = (e: KeyboardEvent) => e.key === "Escape" && onClose();
-    window.addEventListener("keydown", h);
-    return () => window.removeEventListener("keydown", h);
-  }, [open, onClose]);
-  if (!open) return null;
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/50 p-4"
-      onMouseDown={onClose}
-    >
-      <div
-        role="dialog"
-        aria-modal="true"
-        aria-label={title}
-        onMouseDown={(e) => e.stopPropagation()}
-        className={`box-motion my-8 w-full rounded-lg bg-cream p-6 shadow-xl ${wide ? "max-w-3xl" : "max-w-lg"}`}
-      >
-        <div className="mb-4 flex items-center justify-between">
-          <h2 className="font-display text-xl font-bold text-brand">{title}</h2>
-          <button
-            onClick={onClose}
-            aria-label="Close"
-            className="text-2xl leading-none text-ink/60 hover:text-ink"
-          >
-            ×
-          </button>
-        </div>
+    <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
+      <DialogContent className={wide ? "sm:max-w-3xl" : "sm:max-w-lg"}>
+        <DialogHeader>
+          <DialogTitle>{title}</DialogTitle>
+        </DialogHeader>
         {children}
-      </div>
-    </div>
+      </DialogContent>
+    </Dialog>
   );
 }
 
@@ -227,11 +233,11 @@ export function Pager({
 }) {
   if (!meta || meta.totalPage <= 1)
     return meta ? (
-      <p className="mt-3 text-xs text-ink/60">{meta.total} total</p>
+      <p className="mt-3 text-xs text-muted-foreground">{meta.total} total</p>
     ) : null;
   return (
     <div className="mt-4 flex items-center justify-between text-sm">
-      <span className="text-ink/60">
+      <span className="text-muted-foreground">
         {meta.total} total · page {meta.page} of {meta.totalPage}
       </span>
       <div className="flex gap-2">
@@ -261,20 +267,18 @@ export const Table = ({
   head: string[];
   children: ReactNode;
 }) => (
-  <div className="box-motion overflow-x-auto rounded-lg border border-gold/30 bg-white">
-    <table className="w-full text-left text-sm">
-      <thead className="bg-sand text-xs uppercase tracking-wide text-brand">
-        <tr>
-          {head.map((h) => (
-            <th key={h} className="px-4 py-3 font-semibold">
-              {h}
-            </th>
-          ))}
-        </tr>
-      </thead>
-      <tbody className="divide-y divide-gold/20">{children}</tbody>
-    </table>
-  </div>
+  <ShadcnTable>
+    <TableHeader className="bg-muted text-xs uppercase text-muted-foreground">
+      <TableRow>
+        {head.map((heading) => (
+          <TableHead key={heading} className="px-4 font-semibold">
+            {heading}
+          </TableHead>
+        ))}
+      </TableRow>
+    </TableHeader>
+    <TableBody>{children}</TableBody>
+  </ShadcnTable>
 );
 export const Td = ({
   children,
@@ -282,7 +286,11 @@ export const Td = ({
 }: {
   children?: ReactNode;
   className?: string;
-}) => <td className={`px-4 py-3 align-top ${className}`}>{children}</td>;
+}) => (
+  <TableCell className={`px-4 py-3 align-top ${className}`}>
+    {children}
+  </TableCell>
+);
 export const Empty = ({
   cols,
   children = "Nothing here yet.",
@@ -290,9 +298,14 @@ export const Empty = ({
   cols: number;
   children?: ReactNode;
 }) => (
-  <tr>
-    <td colSpan={cols} className="px-4 py-10 text-center text-ink/60">
+  <TableRow>
+    <TableCell
+      colSpan={cols}
+      className="px-4 py-10 text-center text-muted-foreground"
+    >
       {children}
-    </td>
-  </tr>
+    </TableCell>
+  </TableRow>
 );
+
+export { TableRow };

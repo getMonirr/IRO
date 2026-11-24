@@ -1,4 +1,15 @@
 "use client";
+import { TableRow } from "@/components/admin/ui";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 import {
   BiField,
@@ -141,7 +152,7 @@ export default function DonationsPage() {
           </div>
           <div className="grid gap-4 md:grid-cols-4">
             <Field label="Slug">
-              <input
+              <Input
                 required
                 value={draft.slug}
                 onChange={(e) => set("slug", e.target.value.toLowerCase())}
@@ -150,33 +161,43 @@ export default function DonationsPage() {
               />
             </Field>
             <Field label="Region">
-              <select
+              <Select
                 value={draft.region}
-                onChange={(e) =>
-                  set("region", e.target.value as DonationRegion)
+                onValueChange={(value) =>
+                  value && set("region", value as DonationRegion)
                 }
-                className={inputCls}
               >
-                <option value="bangladesh">Bangladesh</option>
-                <option value="abroad">Abroad</option>
-              </select>
+                <SelectTrigger className="w-full">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="bangladesh">Bangladesh</SelectItem>
+                  <SelectItem value="abroad">Abroad</SelectItem>
+                </SelectContent>
+              </Select>
             </Field>
             <Field label="Payment type">
-              <select
+              <Select
                 value={draft.type}
-                onChange={(e) => set("type", e.target.value as DonationType)}
-                className={inputCls}
+                onValueChange={(value) =>
+                  value && set("type", value as DonationType)
+                }
               >
-                <option value="mobile-banking">Mobile banking</option>
-                <option value="bank-transfer">Bank transfer</option>
-                <option value="card">Card</option>
-                <option value="paypal">PayPal</option>
-                <option value="crypto">Crypto</option>
-                <option value="other">Other</option>
-              </select>
+                <SelectTrigger className="w-full">
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="mobile-banking">Mobile banking</SelectItem>
+                  <SelectItem value="bank-transfer">Bank transfer</SelectItem>
+                  <SelectItem value="card">Card</SelectItem>
+                  <SelectItem value="paypal">PayPal</SelectItem>
+                  <SelectItem value="crypto">Crypto</SelectItem>
+                  <SelectItem value="other">Other</SelectItem>
+                </SelectContent>
+              </Select>
             </Field>
             <Field label="Display order">
-              <input
+              <Input
                 type="number"
                 value={draft.order}
                 onChange={(e) => set("order", Number(e.target.value))}
@@ -191,7 +212,7 @@ export default function DonationsPage() {
           />
           <div className="grid gap-4 md:grid-cols-3">
             <Field label="Provider">
-              <input
+              <Input
                 value={draft.provider}
                 onChange={(e) => set("provider", e.target.value)}
                 className={inputCls}
@@ -199,7 +220,7 @@ export default function DonationsPage() {
               />
             </Field>
             <Field label="Currency">
-              <input
+              <Input
                 required
                 value={draft.currency}
                 onChange={(e) => set("currency", e.target.value.toUpperCase())}
@@ -211,7 +232,7 @@ export default function DonationsPage() {
               label="Account / checkout URL"
               hint="Optional secure external payment link"
             >
-              <input
+              <Input
                 type="url"
                 value={draft.checkoutUrl}
                 onChange={(e) => set("checkoutUrl", e.target.value)}
@@ -226,7 +247,7 @@ export default function DonationsPage() {
             onChange={(value: Bi) => set("accountName", value)}
           />
           <Field label="Account number or identifier">
-            <input
+            <Input
               value={draft.accountNumber}
               onChange={(e) => set("accountNumber", e.target.value)}
               className={inputCls}
@@ -240,11 +261,10 @@ export default function DonationsPage() {
             rows={3}
           />
           <label className="flex items-center gap-2 text-sm font-semibold text-brand">
-            <input
-              type="checkbox"
+            <Checkbox
               checked={draft.enabled}
-              onChange={(e) => set("enabled", e.target.checked)}
-            />{" "}
+              onCheckedChange={(checked) => set("enabled", checked === true)}
+            />
             Show this method publicly
           </label>
           <Btn disabled={busy}>
@@ -258,7 +278,7 @@ export default function DonationsPage() {
       >
         {!data?.length && <Empty cols={6}>No payment methods yet.</Empty>}
         {data?.map((method) => (
-          <tr key={method._id}>
+          <TableRow key={method._id}>
             <Td>
               <strong>{method.name.en || method.name.bn}</strong>
               <span className="block text-xs text-ink/60">{method.slug}</span>
@@ -268,22 +288,24 @@ export default function DonationsPage() {
             <Td>{method.currency}</Td>
             <Td>{method.enabled ? "Visible" : "Hidden"}</Td>
             <Td className="space-x-3 whitespace-nowrap">
-              <button
+              <Button
                 type="button"
                 onClick={() => edit(method)}
-                className="font-semibold text-brand hover:underline"
+                variant="link"
+                size="sm"
               >
                 Edit
-              </button>
-              <button
+              </Button>
+              <Button
                 type="button"
                 onClick={() => remove(method)}
-                className="font-semibold text-red-700 hover:underline"
+                variant="destructive"
+                size="sm"
               >
                 Delete
-              </button>
+              </Button>
             </Td>
-          </tr>
+          </TableRow>
         ))}
       </Table>
     </>
